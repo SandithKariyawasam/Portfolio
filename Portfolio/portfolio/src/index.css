@@ -1,0 +1,37 @@
+:root {
+  --primary_color: #5B78F6;
+  --dark: #323232;
+}
+*,*::before,*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  scroll-behavior: smooth;
+  color: #9f9f9f;
+  background: #0F0F0F;
+  line-height: 19.2px;
+}
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+}
+.text-right {
+  text-align: right;
+}
+.container {
+  max-width: 1170px;
+}
+
+.gap-24 {
+  gap: 24px;
+}
+.h-full {
+  height: 100%;
+}
