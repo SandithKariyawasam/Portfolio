@@ -1,41 +1,42 @@
 import React from 'react'
+import { Link, useLocation } from 'react-router-dom' 
 import '../assets/css/style.css'
 import '../assets/css/bootstrap.min.css'
 import '../assets/css/aos.css'
 import logo from '../assets/images/logo.png'
 
-const header = () => {
+const Header = () => {
+  const location = useLocation(); 
+
+  const isActive = (path) => location.pathname === path ? 'active' : '';
+
   return (
-    <>
-      <div class="header-area">
-            <div class="container">
-                <div class="gx-row d-flex align-items-center justify-content-between">
-                    <a href="./index.html" class="logo">
-                        <img src={logo} alt="Logo"/>
-                    </a>
+    <div className="header-area">
+      <div className="container">
+        <div className="gx-row d-flex align-items-center justify-content-between">
+          <Link to="/" className="logo">
+            <img src={logo} alt="Logo" />
+          </Link>
 
-                    <nav class="navbar">
-                        <ul class="menu">
-                            <li class="active"><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="works.html">Works</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                        <a href="./contact.html" class="theme-btn">Let's talk</a>
-                    </nav>
+          <nav className="navbar">
+            <ul className="menu">
+              <li className={isActive('/')}><Link to="/">Home</Link></li>
+              <li className={isActive('/about')}><Link to="/about">About</Link></li>
+              <li className={isActive('/works')}><Link to="/works">Works</Link></li>
+              <li className={isActive('/contact')}><Link to="/contact">Contact</Link></li>
+            </ul>
+            <Link to="/contact" className="theme-btn">Let's talk</Link>
+          </nav>
 
-                    <a href="./contact.html" class="theme-btn">Let's talk</a>
-
-                    <div class="show-menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-            </div>
+          <div className="show-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
-    </>
+      </div>
+    </div>
   )
 }
 
-export default header
+export default Header

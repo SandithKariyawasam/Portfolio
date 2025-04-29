@@ -1,0 +1,119 @@
+import React from 'react'
+import bg1 from '../assets/images/bg1.png'
+import me from '../assets/images/me.png'
+
+const credentials = () => {
+    return (
+        <>
+            <section class="credential-area">
+                <div class="container">
+                    <div class="gx-row d-flex">
+                        <div class="credential-sidebar-wrap" data-aos="zoom-in">
+                            <div class="credential-sidebar text-center">
+                                <div class="shadow-box">
+                                    <img src={bg1} alt="BG" class="bg-img"/>
+                                        <div class="img-box">
+                                            <img src={me} alt="About Me"/>
+                                        </div>
+                                        <h2>Sandith Kariyawasam</h2>
+                                        <p>@Sandith.kariyawasam</p>
+
+                                        <ul class="social-links d-flex justify-content-center">
+                                            <li><a href="#"><i class="iconoir-linkedin"></i></a></li>
+                                            <li><a href="#"><i class="iconoir-tiktok"></i></a></li>
+                                            <li><a href="#"><i class="iconoir-instagram"></i></a></li>
+                                            <li><a href="#"><i class="iconoir-facebook-tag"></i></a></li>
+                                        </ul>
+
+                                        <a href="./contact.html" class="theme-btn">Contact Me</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="credential-content flex-1">
+                            <div class="credential-about" data-aos="zoom-in">
+                                <h2>About Me</h2>
+                                <p>I'm Sandith, a passionate and detail-oriented web developer focused on building modern, responsive, and user-friendly web applications. With a strong foundation in front-end technologies and growing experience in tools like Flutter, I enjoy crafting seamless digital experiences that not only look great but also perform well. I have a natural curiosity for learning and enjoy diving into new frameworks, design systems, and development practices to continuously improve my skills.</p>
+                                <p>Beyond coding, I’m driven by a desire to solve real-world problems through technology. Whether working independently or as part of a team, I bring a proactive mindset and a commitment to delivering high-quality solutions. I value clean, maintainable code and take pride in building applications that are both functional and intuitive. As I grow in the tech industry, I aim to contribute to impactful projects and stay on the cutting edge of web development trends.</p>
+                            </div>
+
+                            <div class="credential-edc-exp credential-experience">
+                                <h2 data-aos="fade-up">Experience</h2>
+                                <div class="credential-edc-exp-item" data-aos="zoom-in">
+                                    <h4>2022 - Present</h4>
+                                    <h3>Full stack Developer</h3>
+                                    <h5>Freelancer</h5>
+                                    <p>I started my freelancing career in 2022, focusing on web development. Since then, I have worked with diverse clients, helping them bring their ideas to life through custom websites and applications. My expertise spans front-end and back-end technologies, and I strive to deliver high-quality solutions tailored to my clients' needs.</p>
+                                </div>
+                                <div class="credential-edc-exp-item" data-aos="zoom-in">
+                                    <h4>2023 - Present</h4>
+                                    <h3>Front-End Developer</h3>
+                                    <h5>Bravoscript</h5>
+                                    <p>As a front-end developer at Bravoscript, I specialize in creating dynamic and user-friendly interfaces. I work closely with design and back-end teams to build responsive, efficient, and visually appealing web applications. My role involves utilizing cutting-edge technologies to ensure a seamless and engaging user experience.</p>
+                                </div>
+                            </div>
+
+                            <div class="credential-edc-exp credential-education">
+                                <h2 data-aos="fade-up">Education</h2>
+                                <div class="credential-edc-exp-item" data-aos="zoom-in">
+                                    <h4>2020</h4>
+                                    <h3>G.C.E. Advanced Level (C, C, C) - 2015 <br/>
+                                    (Mathematical Stream - Combined Mathematics, Physics, ICT)</h3>
+                                    <h5>Sri Sumangala College, Panadura, Sri Lanka</h5>
+                                    <p>I completed my G.C.E. Advanced Level in 2020, achieving grades C, C, and C in the Mathematical Stream, with a focus on Combined Mathematics, Physics, and ICT. This academic foundation has provided me with strong problem-solving skills and a solid understanding of technical subjects.</p>
+                                </div>
+                                <div class="credential-edc-exp-item" data-aos="zoom-in">
+                                    <h4>2022 - Present</h4>
+                                    <h3>BSc. (Honours) in Software Engineer</h3>
+                                    <h5>NSBM Green University</h5>
+                                    <p>Since 2022, I have been pursuing a BSc. (Honours) in Software Engineering at NSBM Green University. This program has equipped me with a deep understanding of software development, algorithms, and system design, enhancing my technical skills and preparing me for a successful career in the tech industry.</p>
+                                </div>
+                            </div>
+
+                            <div class="skills-wrap">
+                                <h2 data-aos="fade-up">Skills</h2>
+                                <div class="d-grid skill-items gap-24 flex-wrap">
+                                    <div class="skill-item" data-aos="zoom-in">
+                                        <span class="percent">90%</span>
+                                        <h3 class="name">JavaScript</h3>
+                                        <p>Non enim praesent</p>
+                                    </div>
+                                    <div class="skill-item" data-aos="zoom-in">
+                                        <span class="percent">78%</span>
+                                        <h3 class="name">C#</h3>
+                                        <p>Non enim praesent</p>
+                                    </div>
+                                    <div class="skill-item" data-aos="zoom-in">
+                                        <span class="percent">92%</span>
+                                        <h3 class="name">Figma</h3>
+                                        <p>Non enim praesent</p>
+                                    </div>
+                                    <div class="skill-item" data-aos="zoom-in">
+                                        <span class="percent">75%</span>
+                                        <h3 class="name">Java</h3>
+                                        <p>Non enim praesent</p>
+                                    </div>
+                                    <div class="skill-item" data-aos="zoom-in">
+                                        <span class="percent">95%</span>
+                                        <h3 class="name">React</h3>
+                                        <p>Non enim praesent</p>
+                                    </div>
+                                    <div class="skill-item" data-aos="zoom-in">
+                                        <span class="percent">60%</span>
+                                        <h3 class="name">Node Js</h3>
+                                        <p>Non enim praesent</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </>
+    )
+}
+
+export default credentials

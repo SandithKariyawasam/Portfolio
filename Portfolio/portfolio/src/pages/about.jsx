@@ -59,7 +59,7 @@ const about = () => {
                             <ul>
                                 <li>
                                     <p class="date">2020</p>
-                                    <h2> G.C.E. Advanced Level (C, C, C) - 2015 <br />
+                                    <h2> G.C.E. Advanced Level (C, C, C) - 2020 <br />
                                         (Mathematical Stream - Combined Mathematics, Physics, ICT)</h2>
                                     <p class="type"> Sri Sumangala College, Panadura, Sri Lanka</p>
                                 </li>
@@ -131,7 +131,7 @@ const about = () => {
                                             <h1>Credentials</h1>
                                         </div>
 
-                                        <a href="" class="about-btn">
+                                        <a href="./credentials" class="about-btn">
                                             <img src={icon} alt="Button" />
                                         </a>
 

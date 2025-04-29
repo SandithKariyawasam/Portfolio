@@ -21,7 +21,7 @@ const home = () => {
                     <div class="row">
                         <div class="col-md-6" data-aos="zoom-in">
                             <div class="about-me-box shadow-box">
-                                <a class="overlay-link" href="./about"></a>
+                                <a class="overlay-link" href="/about"></a>
                                 <img src={bg1} alt="BG" class="bg-img" />
                                 <div class="img-box">
                                     <img src={me} alt="About Me" />
