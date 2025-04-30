@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/home'
 import About from './pages/about'
 import Credentials from './pages/credentials'
+import Works from './pages/works'
 import Header from './component/header'
 import Footer from './component/footer'
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/credentials" element={<Credentials />} />
+          <Route path="/works" element={<Works />} />
         </Routes>
       </main>
       <Footer />
