@@ -19,6 +19,9 @@ const footer = () => {
                         <li><a href="works.html">Works</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
+                    <p class="copyright">
+                        &copy; All rights reserved by <span>BravoScript</span>
+                    </p>
                 </div>
             </div>
         </div>

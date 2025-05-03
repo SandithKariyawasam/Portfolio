@@ -25,8 +25,10 @@ const Header = () => {
               <li className={isActive('/works')}><Link to="/works">Works</Link></li>
               <li className={isActive('/contact')}><Link to="/contact">Contact</Link></li>
             </ul>
-            <Link to="/contact" className="theme-btn">Let's talk</Link>
+            <a href="./contact.html" class="theme-btn">Let's talk</a>
           </nav>
+
+          <a href="./contact.html" class="theme-btn">Let's talk</a>
 
           <div className="show-menu">
             <span></span>
