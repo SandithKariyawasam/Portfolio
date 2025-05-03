@@ -10,6 +10,7 @@ import Home from './pages/home'
 import About from './pages/about'
 import Credentials from './pages/credentials'
 import Works from './pages/works'
+import Blog from './pages/blog'
 import Header from './component/header'
 import Footer from './component/footer'
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/credentials" element={<Credentials />} />
           <Route path="/works" element={<Works />} />
+          <Route path="/blog" element={<Blog/>}/>
         </Routes>
       </main>
       <Footer />
