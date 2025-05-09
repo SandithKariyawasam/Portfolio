@@ -14,6 +14,7 @@ import Blog from './pages/blog'
 import Contact from './pages/contact'
 import Service from './pages/service'
 import Workdetails from './pages/work-details'
+import Blogdetails from './pages/blog-details'
 import Header from './component/header'
 import Footer from './component/footer'
 
@@ -31,6 +32,7 @@ function App() {
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/service' element={<Service/>}/>
           <Route path='/work-details' element={<Workdetails/>}/>
+          <Route path='/blog-details' element={<Blogdetails/>}/>
         </Routes>
       </main>
       <Footer />
