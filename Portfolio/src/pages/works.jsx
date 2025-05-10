@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import bg1 from '../assets/images/bg1.png'
 import pro1 from '../assets/images/project1.png'
 import icon from '../assets/images/icon.svg'
@@ -9,7 +10,7 @@ import pro4 from '../assets/images/project4.png'
 import pro5 from '../assets/images/project5.png'
 import pro6 from '../assets/images/project6.png'
 
-const works = () => {
+const Works = () => {
     return (
         <>
             <div className="projects-area">
@@ -19,7 +20,7 @@ const works = () => {
                         <div className="col-md-4">
                             <div data-aos="zoom-in">
                                 <div className="project-item shadow-box">
-                                    <a className="overlay-link" href="./work-details"></a>
+                                    <Link to="/work-details" className="overlay-link"></Link>
                                     <img src={bg1} alt="BG" className="bg-img" />
                                     <div className="project-img">
                                         <img src={pro1} alt="Project" />
@@ -29,16 +30,16 @@ const works = () => {
                                             <p>WEB DESIGN</p>
                                             <h1>AutoBid</h1>
                                         </div>
-                                        <a href="work-details" className="project-btn">
+                                        <Link to="/work-details" className="project-btn">
                                             <img src={icon} alt="Button" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
 
                             <div data-aos="zoom-in">
                                 <div className="project-item shadow-box">
-                                    <a className="overlay-link" href="./work-details"></a>
+                                    <Link to="/work-details" className="overlay-link"></Link>
                                     <img src={bg1} alt="BG" className="bg-img" />
                                     <div className="project-img">
                                         <img src={pro3} alt="Project" />
@@ -48,9 +49,9 @@ const works = () => {
                                             <p>UI/UX Design</p>
                                             <h1>Helaya</h1>
                                         </div>
-                                        <a href="work-details" className="project-btn">
+                                        <Link to="/work-details" className="project-btn">
                                             <img src={icon} alt="Button" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +62,7 @@ const works = () => {
                             <div className="d-flex align-items-start gap-24">
                                 <div data-aos="zoom-in" className="flex-1">
                                     <div className="project-item shadow-box">
-                                        <a className="overlay-link" href="./work-details"></a>
+                                        <Link to="/work-details" className="overlay-link"></Link>
                                         <img src={bg1} alt="BG" className="bg-img" />
                                         <div className="project-img">
                                             <img src={pro2} alt="Project" />
@@ -71,16 +72,16 @@ const works = () => {
                                                 <p>MOBILE APP DESIGN</p>
                                                 <h1>HelaFix</h1>
                                             </div>
-                                            <a href="work-details" className="project-btn">
+                                            <Link to="/work-details" className="project-btn">
                                                 <img src={icon} alt="Button" />
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div data-aos="zoom-in" className="flex-1">
                                     <div className="project-item shadow-box">
-                                        <a className="overlay-link" href="./work-details"></a>
+                                        <Link to="/work-details" className="overlay-link"></Link>
                                         <img src={bg1} alt="BG" className="bg-img" />
                                         <div className="project-img">
                                             <img src={pro4} alt="Project" />
@@ -90,9 +91,9 @@ const works = () => {
                                                 <p>WEB DESIGN</p>
                                                 <h1>BravoScript</h1>
                                             </div>
-                                            <a href="work-details" className="project-btn">
+                                            <Link to="/work-details" className="project-btn">
                                                 <img src={icon} alt="Button" />
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -101,7 +102,7 @@ const works = () => {
                             <div className="d-flex align-items-start gap-24">
                                 <div data-aos="zoom-in" className="flex-1">
                                     <div className="project-item shadow-box">
-                                        <a className="overlay-link" href="./work-details"></a>
+                                        <Link to="/work-details" className="overlay-link"></Link>
                                         <img src={bg1} alt="BG" className="bg-img" />
                                         <div className="project-img">
                                             <img src={pro6} alt="Project" />
@@ -111,16 +112,16 @@ const works = () => {
                                                 <p>WEB DESIGNING</p>
                                                 <h1>Digital පංචිකාවත්ත</h1>
                                             </div>
-                                            <a href="work-details" className="project-btn">
+                                            <Link to="/work-details" className="project-btn">
                                                 <img src={icon} alt="Button" />
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div data-aos="zoom-in" className="flex-1">
                                     <div className="project-item shadow-box">
-                                        <a className="overlay-link" href="./work-details"></a>
+                                        <Link to="/work-details" className="overlay-link"></Link>
                                         <img src={bg1} alt="BG" className="bg-img" />
                                         <div className="project-img">
                                             <img src={pro5} alt="Project" />
@@ -130,9 +131,9 @@ const works = () => {
                                                 <p>UI/UX DESIGN</p>
                                                 <h1>Panchikawatta</h1>
                                             </div>
-                                            <a href="work-details" className="project-btn">
+                                            <Link to="/work-details" className="project-btn">
                                                 <img src={icon} alt="Button" />
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
 
@@ -148,4 +149,4 @@ const works = () => {
     )
 }
 
-export default works
+export default Works

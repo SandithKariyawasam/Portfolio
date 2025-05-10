@@ -1,8 +1,9 @@
-import React from 'react'
-import bg1 from '../assets/images/bg1.png'
-import icon3 from '../assets/images/icon3.png'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import bg1 from '../assets/images/bg1.png';
+import icon3 from '../assets/images/icon3.png';
 
-const contact = () => {
+const Contact = () => {
     return (
         <>
             <div className="contact-area">
@@ -44,9 +45,9 @@ const contact = () => {
 
                             <h3 data-aos="fade-up">Social Info</h3>
                             <ul className="social-links d-flex align-center" data-aos="zoom-in">
-                                <li><a className="shadow-box" href=""><i class="iconoir-linkedin"></i></a></li>
-                                <li><a className="shadow-box" href=""><i class="iconoir-facebook"></i></a></li>
-                                <li><a className="shadow-box" href=""><i class="iconoir-instagram"></i></a></li>
+                                <li><Link className="shadow-box" to="#"><i className="iconoir-linkedin"></i></Link></li>
+                                <li><Link className="shadow-box" to="#"><i className="iconoir-facebook"></i></Link></li>
+                                <li><Link className="shadow-box" to="#"><i className="iconoir-instagram"></i></Link></li>
                             </ul>
                         </div>
 
@@ -74,12 +75,11 @@ const contact = () => {
                                 </form>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </>
-    )
+    );
 }
 
-export default contact
+export default Contact;

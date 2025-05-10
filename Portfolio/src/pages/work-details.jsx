@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import bg1 from '../assets/images/bg1.png'
 import icon2 from '../assets/images/icon2.png'
 import icon3 from '../assets/images/icon3.png'
@@ -95,8 +96,8 @@ const WorkDetails = () => {
                                 <p>AutoBid is an online auction platform developed as part of our Software Architecture group project. Built from the ground up, it features a responsive frontend using HTML, CSS, and JavaScript, a robust backend powered by C# with ASP.NET, and a reliable SQL Server (SSMS) database. The platform allows users to engage in real-time bidding with a streamlined interface and smooth user experience. From implementing user authentication to managing live bid tracking, this project gave us valuable hands-on experience in applying key architectural principles in a real-world context.
                                     <br /><br/>
                                     🔗 GitHub Repositories:<br/>
-                                    Frontend:<a href='https://github.com/SandithKariyawasam/SA-Final-Project-Frontend'>Click Here...</a><br/>
-                                    Backend:<a href='https://github.com/SandithKariyawasam/SA-Final-Project-Backend'>Click Here...</a>
+                                    Frontend: <a href='https://github.com/SandithKariyawasam/SA-Final-Project-Frontend' target="_blank" rel="noopener noreferrer">Click Here...</a><br/>
+                                    Backend: <a href='https://github.com/SandithKariyawasam/SA-Final-Project-Backend' target="_blank" rel="noopener noreferrer">Click Here...</a>
                                 </p>
                             </div>
                         </div>

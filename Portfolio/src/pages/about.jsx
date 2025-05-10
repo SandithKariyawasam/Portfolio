@@ -1,19 +1,20 @@
-import React from 'react'
-import bg1 from '../assets/images/bg1.png'
-import me2 from '../assets/images/me2.png'
-import str2 from '../assets/images/star-2.png'
-import icon2 from '../assets/images/icon2.png'
-import icon from '../assets/images/icon.svg'
-import sign from '../assets/images/sign.png'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import bg1 from '../assets/images/bg1.png';
+import me2 from '../assets/images/me2.png';
+import str2 from '../assets/images/star-2.png';
+import icon2 from '../assets/images/icon2.png';
+import icon from '../assets/images/icon.svg';
+import sign from '../assets/images/sign.png';
 
-const about = () => {
+const About = () => {
     return (
         <div className="about-area">
             <div className="container">
                 <div className="d-flex about-me-wrap align-items-start gap-24">
                     <div data-aos="zoom-in">
                         <div className="about-image-box shadow-box">
-                            <img src={bg1} alt="BG" className="bg-img" />
+                            <img src={bg1} alt="Background design" className="bg-img" />
                             <div className="image-inner">
                                 <img src={me2} alt="About Me" />
                             </div>
@@ -21,20 +22,21 @@ const about = () => {
                     </div>
 
                     <div className="about-details" data-aos="zoom-in">
-                        <h1 className="section-heading" data-aos="fade-up"><img src={str2} alt="Star" /> Self-summary <img src={str2} alt="Star" /></h1>
+                        <h1 className="section-heading" data-aos="fade-up">
+                            <img src={str2} alt="Star decoration icon" /> Self-summary <img src={str2} alt="Star decoration icon" />
+                        </h1>
                         <div className="about-details-inner shadow-box">
-                            <img src={icon2} alt="Star" />
+                            <img src={icon2} alt="Icon" />
                             <h1>Sandith Kariyawasam</h1>
-                            <p>I am a Sri lankan-based software engineer with a focus on web design, mobile app development, a ui/ux design. I have a diverse range of experience having worked across various fields and industries.</p>
+                            <p>I am a Sri Lankan-based software engineer with a focus on web design, mobile app development, and UI/UX design. I have a diverse range of experience having worked across various fields and industries.</p>
                         </div>
-
                     </div>
                 </div>
 
                 <div className="row mt-24">
                     <div className="col-md-6" data-aos="zoom-in">
                         <div className="about-edc-exp about-experience shadow-box">
-                            <img src={bg1} alt="BG" className="bg-img" />
+                            <img src={bg1} alt="Background design" className="bg-img" />
                             <h3>EXPERIENCE</h3>
 
                             <ul>
@@ -53,19 +55,19 @@ const about = () => {
                     </div>
                     <div className="col-md-6" data-aos="zoom-in">
                         <div className="about-edc-exp about-education shadow-box">
-                            <img src={bg1} alt="BG" className="bg-img" />
+                            <img src={bg1} alt="Background design" className="bg-img" />
                             <h3>EDUCATION</h3>
 
                             <ul>
                                 <li>
                                     <p className="date">2020</p>
-                                    <h2> G.C.E. Advanced Level (C, C, C) - 2020 <br />
+                                    <h2>G.C.E. Advanced Level (C, C, C) - 2020 <br />
                                         (Mathematical Stream - Combined Mathematics, Physics, ICT)</h2>
-                                    <p className="type"> Sri Sumangala College, Panadura, Sri Lanka</p>
+                                    <p className="type">Sri Sumangala College, Panadura, Sri Lanka</p>
                                 </li>
                                 <li>
                                     <p className="date">2022 - Present</p>
-                                    <h2>BSc. (Honours) in Software Engineer</h2>
+                                    <h2>BSc. (Honours) in Software Engineering</h2>
                                     <p className="type">NSBM Green University</p>
                                 </li>
                             </ul>
@@ -79,18 +81,18 @@ const about = () => {
 
                             <div data-aos="zoom-in">
                                 <div className="about-profile-box info-box shadow-box h-full">
-                                    <img src={bg1} alt="BG" className="bg-img" />
+                                    <img src={bg1} alt="Background design" className="bg-img" />
                                     <div className="inner-profile-icons shadow-box">
-                                        <a href="#">
+                                        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
                                             <i className="iconoir-linkedin"></i>
                                         </a>
-                                        <a href="#">
+                                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                                             <i className="iconoir-facebook"></i>
                                         </a>
-                                        <a href="#">
+                                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                                             <i className="iconoir-instagram"></i>
                                         </a>
-                                        <a href="#">
+                                        <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">
                                             <i className="iconoir-github"></i>
                                         </a>
                                     </div>
@@ -100,30 +102,29 @@ const about = () => {
                                             <h1>Profiles</h1>
                                         </div>
 
-                                        <a href="./contact" className="about-btn">
+                                        <Link to="/contact" className="about-btn">
                                             <img src={icon} alt="Button" />
-                                        </a>
-
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
 
                             <div data-aos="zoom-in" className="flex-1">
                                 <div className="about-contact-box info-box shadow-box">
-                                    <a className="overlay-link" href="./contact"></a>
-                                    <img src={bg1} alt="BG" className="bg-img" />
+                                    <Link to="/contact" className="overlay-link"></Link>
+                                    <img src={bg1} alt="Background design" className="bg-img" />
                                     <img src={icon2} alt="Icon" className="star-icon" />
                                     <h1>Let's <br />work <span>together.</span></h1>
-                                    <a href="./contact" className="about-btn">
+                                    <Link to="/contact" className="about-btn">
                                         <img src={icon} alt="Button" />
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
 
                             <div data-aos="zoom-in" className="h-full">
                                 <div className="about-crenditials-box info-box shadow-box">
-                                    <a className="overlay-link" href="./credentials"></a>
-                                    <img src={bg1} alt="BG" className="bg-img" />
+                                    <Link to="/credentials" className="overlay-link"></Link>
+                                    <img src={bg1} alt="Background design" className="bg-img" />
                                     <img src={sign} alt="Sign" />
                                     <div className="d-flex align-items-center justify-content-between">
                                         <div className="infos">
@@ -131,10 +132,9 @@ const about = () => {
                                             <h1>Credentials</h1>
                                         </div>
 
-                                        <a href="./credentials" className="about-btn">
+                                        <Link to="/credentials" className="about-btn">
                                             <img src={icon} alt="Button" />
-                                        </a>
-
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -144,7 +144,7 @@ const about = () => {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default about
+export default About;

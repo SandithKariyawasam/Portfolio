@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import bg1 from '../assets/images/bg1.png'
 import me from '../assets/images/me.png'
 
@@ -19,13 +20,13 @@ const credentials = () => {
                                         <p>@Sandith.kariyawasam</p>
 
                                         <ul className="social-links d-flex justify-content-center">
-                                            <li><a href="#"><i class="iconoir-linkedin"></i></a></li>
-                                            <li><a href="#"><i class="iconoir-tiktok"></i></a></li>
-                                            <li><a href="#"><i class="iconoir-instagram"></i></a></li>
-                                            <li><a href="#"><i class="iconoir-facebook-tag"></i></a></li>
+                                            <li><Link to="#"><i className="iconoir-linkedin"></i></Link></li>
+                                            <li><Link to="#"><i className="iconoir-tiktok"></i></Link></li>
+                                            <li><Link to="#"><i className="iconoir-instagram"></i></Link></li>
+                                            <li><Link to="#"><i className="iconoir-facebook-tag"></i></Link></li>
                                         </ul>
 
-                                        <a href="./contact" className="theme-btn">Contact Me</a>
+                                        <Link to="./contact" className="theme-btn">Contact Me</Link>
                                 </div>
                             </div>
                         </div>
@@ -108,6 +109,7 @@ const credentials = () => {
                             </div>
 
                             
+
                         </div>
                     </div>
                 </div>

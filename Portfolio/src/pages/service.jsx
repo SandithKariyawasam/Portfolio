@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import bg1 from '../assets/images/bg1.png'
 import icon from '../assets/images/icon.svg'
 import sign from '../assets/images/sign.png'
@@ -18,19 +19,19 @@ const service = () => {
                                 <div className="service-sidebar-inner shadow-box">
                                     <ul>
                                         <li>
-                                            <i class="iconoir-code"></i>
+                                            <i className="iconoir-code"></i>
                                             WEB DESIGNING
                                         </li>
                                         <li>
-                                            <i class="iconoir-smartphone-device"></i>
+                                            <i className="iconoir-smartphone-device"></i>
                                             APP DESIGNING
                                         </li>
                                         <li>
-                                            <i class="iconoir-cloud"></i>
+                                            <i className="iconoir-cloud"></i>
                                             CLOUD SERVICES
                                         </li>
                                         <li>
-                                            <i class="iconoir-design-pencil"></i>
+                                            <i className="iconoir-design-pencil"></i>
                                             UI/UX DESIGN
                                         </li>
                                     </ul>
@@ -75,15 +76,15 @@ const service = () => {
                                     <div className="about-profile-box info-box shadow-box h-full">
                                         <img src={bg1} alt="BG" className="bg-img" />
                                         <div className="inner-profile-icons shadow-box">
-                                            <a href="#">
-                                                <i class="iconoir-linkedin"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="iconoir-facebook"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="iconoir-instagram"></i>
-                                            </a>
+                                            <Link to="#">
+                                                <i className="iconoir-linkedin"></i>
+                                            </Link>
+                                            <Link to="#">
+                                                <i className="iconoir-facebook"></i>
+                                            </Link>
+                                            <Link to="#">
+                                                <i className="iconoir-instagram"></i>
+                                            </Link>
                                         </div>
                                         <div className="d-flex align-items-center justify-content-between">
                                             <div className="infos">
@@ -91,9 +92,9 @@ const service = () => {
                                                 <h1>Profiles</h1>
                                             </div>
 
-                                            <a href="./contact" className="about-btn">
+                                            <Link to="./contact" className="about-btn">
                                                 <img src={icon} alt="Button" />
-                                            </a>
+                                            </Link>
 
                                         </div>
                                     </div>
@@ -101,19 +102,19 @@ const service = () => {
 
                                 <div data-aos="zoom-in" className="flex-1">
                                     <div className="about-contact-box info-box shadow-box">
-                                        <a className="overlay-link" href="./contact"></a>
+                                        <Link className="overlay-link" to="./contact"></Link>
                                         <img src={bg1} alt="BG" className="bg-img" />
                                         <img src={icon2} alt="Icon" className="star-icon" />
                                         <h1>Let's <br />work <span>together.</span></h1>
-                                        <a href="./contact.html" className="about-btn">
+                                        <Link to="./contact" className="about-btn">
                                             <img src={icon} alt="Button" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
 
                                 <div data-aos="zoom-in" className="h-full">
                                     <div className="about-crenditials-box info-box shadow-box">
-                                        <a className="overlay-link" href="./credentials"></a>
+                                        <Link className="overlay-link" to="./credentials"></Link>
                                         <img src={bg1} alt="BG" className="bg-img" />
                                         <img src={sign} alt="Sign" />
                                         <div className="d-flex align-items-center justify-content-between">
@@ -122,9 +123,9 @@ const service = () => {
                                                 <h1>Credentials</h1>
                                             </div>
 
-                                            <a href="./credentials.html" className="about-btn">
+                                            <Link to="./credentials" className="about-btn">
                                                 <img src={icon} alt="Button" />
-                                            </a>
+                                            </Link>
 
                                         </div>
                                     </div>
@@ -140,3 +141,4 @@ const service = () => {
 }
 
 export default service
+
