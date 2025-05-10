@@ -4,7 +4,7 @@ import '../src/assets/css/bootstrap.min.css'
 import '../src/assets/css/aos.css'
 import '../src/assets/css/style.css'
 
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom'
 
 
 import Home from './pages/home'
@@ -21,7 +21,7 @@ import Footer from './component/footer'
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Header />
       <main className="main-homepage">
         <Routes>
@@ -37,7 +37,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </Router>
+    </BrowserRouter>
   )
 }
 
