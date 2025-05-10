@@ -21,7 +21,7 @@ import Footer from './component/footer'
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Header />
       <main className="main-homepage">
         <Routes>
