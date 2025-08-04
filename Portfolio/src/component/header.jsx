@@ -1,14 +1,14 @@
-import React from 'react'
-import { Link, useLocation } from 'react-router-dom' 
-import '../assets/css/style.css'
-import '../assets/css/bootstrap.min.css'
-import '../assets/css/aos.css'
-import logo from '../assets/images/logo.png'
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import "../assets/css/style.css";
+import "../assets/css/bootstrap.min.css";
+import "../assets/css/aos.css";
+import logo from "../assets/images/logo.png";
 
 const Header = () => {
-  const location = useLocation(); 
+  const location = useLocation();
 
-  const isActive = (path) => location.pathname === path ? 'active' : '';
+  const isActive = (path) => (location.pathname === path ? "active" : "");
 
   return (
     <div className="header-area">
@@ -20,15 +20,27 @@ const Header = () => {
 
           <nav className="navbar">
             <ul className="menu">
-              <li className={isActive('/')}><Link to="/">Home</Link></li>
-              <li className={isActive('/about')}><Link to="/about">About</Link></li>
-              <li className={isActive('/works')}><Link to="/works">Works</Link></li>
-              <li className={isActive('/contact')}><Link to="/contact">Contact</Link></li>
+              <li className={isActive("/")}>
+                <Link to="/">Home</Link>
+              </li>
+              <li className={isActive("/about")}>
+                <Link to="/about">About</Link>
+              </li>
+              <li className={isActive("/works")}>
+                <Link to="/works">Works</Link>
+              </li>
+              <li className={isActive("/contact")}>
+                <Link to="/contact">Contact</Link>
+              </li>
             </ul>
-            <a href="./contact" class="theme-btn">Let's talk</a>
+            <Link to="/contact" className="theme-btn">
+              Let's talk
+            </Link>
           </nav>
 
-          <a href="./contact" class="theme-btn">Let's talk</a>
+          <Link to="/contact" className="theme-btn">
+            Let's talk
+          </Link>
 
           <div className="show-menu">
             <span></span>
@@ -38,7 +50,7 @@ const Header = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
