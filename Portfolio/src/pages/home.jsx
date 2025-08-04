@@ -1,20 +1,29 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
-import '../assets/css/style.css';
-import '../assets/css/bootstrap.min.css';
-import '../assets/css/aos.css';
+import "../assets/css/style.css";
+import "../assets/css/bootstrap.min.css";
+import "../assets/css/aos.css";
 
-import bg1 from '../assets/images/bg1.png';
-import me from '../assets/images/me.png';
-import icon from '../assets/images/icon.svg';
-import sign from '../assets/images/sign.png';
-import myworks from '../assets/images/my-works.png';
-import gfonts from '../assets/images/gfonts.png';
-import icon2 from '../assets/images/icon2.png';
-import star from '../assets/images/star1.svg';
+import bg1 from "../assets/images/bg1.png";
+import me from "../assets/images/me.png";
+import icon from "../assets/images/icon.svg";
+import sign from "../assets/images/sign.png";
+import myworks from "../assets/images/my-works.png";
+import gfonts from "../assets/images/gfonts.png";
+import icon2 from "../assets/images/icon2.png";
+import star from "../assets/images/star1.svg";
 
 const Home = () => {
+  useEffect(() => {
+    if (window.AOS) {
+      window.AOS.init({
+        duration: 800,
+        once: true,
+      });
+      window.AOS.refresh();
+    }
+  }, []);
   return (
     <div className="about-area">
       <div className="container">
@@ -44,9 +53,13 @@ const Home = () => {
                   <div className="marquee">
                     <div>
                       <span>
-                        <img src={star} alt="Star" /> I’m currently working on <b>Mobile app</b> & <b>chat web app</b>{' '}
-                        <img src={star} alt="Star" />I’m currently working on <b>Mobile app</b> & <b>chat web app</b>{' '}
-                        <img src={star} alt="Star" />I’m currently working on <b>Mobile app</b> & <b>chat web app</b>
+                        <img src={star} alt="Star" /> I’m currently working on{" "}
+                        <b>Mobile app</b> & <b>chat web app</b>{" "}
+                        <img src={star} alt="Star" />
+                        I’m currently working on <b>Mobile app</b> &{" "}
+                        <b>chat web app</b> <img src={star} alt="Star" />
+                        I’m currently working on <b>Mobile app</b> &{" "}
+                        <b>chat web app</b>
                       </span>
                     </div>
                   </div>
@@ -138,10 +151,18 @@ const Home = () => {
                 <div className="about-profile-box info-box shadow-box h-full">
                   <img src={bg1} alt="BG" className="bg-img" />
                   <div className="inner-profile-icons shadow-box">
-                    <a href="#"><i className="iconoir-linkedin"></i></a>
-                    <a href="#"><i className="iconoir-facebook"></i></a>
-                    <a href="#"><i className="iconoir-instagram"></i></a>
-                    <a href="#"><i className="iconoir-github"></i></a>
+                    <a href="#">
+                      <i className="iconoir-linkedin"></i>
+                    </a>
+                    <a href="#">
+                      <i className="iconoir-facebook"></i>
+                    </a>
+                    <a href="#">
+                      <i className="iconoir-instagram"></i>
+                    </a>
+                    <a href="#">
+                      <i className="iconoir-github"></i>
+                    </a>
                   </div>
                   <div className="d-flex align-items-center justify-content-between">
                     <div className="infos">
@@ -165,15 +186,24 @@ const Home = () => {
               <div className="clients d-flex align-items-start gap-24 justify-content-center">
                 <div className="client-item">
                   <h1>02</h1>
-                  <p>Years <br />Experience</p>
+                  <p>
+                    Years <br />
+                    Experience
+                  </p>
                 </div>
                 <div className="client-item">
                   <h1>+5</h1>
-                  <p>CLIENTS <br />WORLDWIDE</p>
+                  <p>
+                    CLIENTS <br />
+                    WORLDWIDE
+                  </p>
                 </div>
                 <div className="client-item">
                   <h1>+12</h1>
-                  <p>Total <br />Projects</p>
+                  <p>
+                    Total <br />
+                    Projects
+                  </p>
                 </div>
               </div>
             </div>
@@ -184,7 +214,10 @@ const Home = () => {
               <Link className="overlay-link" to="/contact" />
               <img src={bg1} alt="BG" className="bg-img" />
               <img src={icon2} alt="Icon" className="star-icon" />
-              <h1>Let's <br />work <span>together.</span></h1>
+              <h1>
+                Let's <br />
+                work <span>together.</span>
+              </h1>
               <Link to="/contact" className="about-btn">
                 <img src={icon} alt="Button" />
               </Link>
@@ -197,4 +230,3 @@ const Home = () => {
 };
 
 export default Home;
-
