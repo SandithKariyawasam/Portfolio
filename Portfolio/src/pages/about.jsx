@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import bg1 from "../assets/images/bg1.png";
-import me2 from "../assets/images/me2.png";
+import me2 from "../assets/images/me.png";
 import str2 from "../assets/images/star-2.png";
 import icon2 from "../assets/images/icon2.png";
 import icon from "../assets/images/icon.svg";

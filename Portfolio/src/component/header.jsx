@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import "../assets/css/style.css";
 import "../assets/css/bootstrap.min.css";
 import "../assets/css/aos.css";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/signature.png";
 
 const Header = () => {
   const location = useLocation();
