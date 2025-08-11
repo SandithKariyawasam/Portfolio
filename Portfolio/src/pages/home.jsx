@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import AOS from "aos";               
+import "aos/dist/aos.css";           
 
+// other imports...
+import { Link } from "react-router-dom";
 import "../assets/css/style.css";
 import "../assets/css/bootstrap.min.css";
 import "../assets/css/aos.css";
@@ -16,13 +19,11 @@ import star from "../assets/images/star1.svg";
 
 const Home = () => {
   useEffect(() => {
-    if (window.AOS) {
-      window.AOS.init({
-        duration: 800,
-        once: true,
-      });
-      window.AOS.refresh();
-    }
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+    // No need to call AOS.refresh() here usually
   }, []);
   return (
     <div className="about-area">

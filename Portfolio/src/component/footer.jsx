@@ -7,19 +7,19 @@ import logo from "../assets/images/signature.png";
 const footer = () => {
   return (
     <>
-      <div class="footer-area">
-            <div class="container">
-                <div class="footer-content text-center">
-                    <a href="./index.html" class="logo">
+      <div className="footer-area">
+            <div className="container">
+                <div className="footer-content text-center">
+                    <a href="./index.html" className="logo">
                         <img src={logo} alt="Logo"/>
                     </a>
-                    <ul class="footer-menu">
+                    <ul className="footer-menu">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="works.html">Works</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
-                    <p class="copyright">
+                    <p className="copyright">
                         &copy; All rights reserved by <span>BravoScript</span>
                     </p>
                 </div>

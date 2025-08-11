@@ -34,10 +34,57 @@
   <div class="circle"></div>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
-  <script src="%PUBLIC_URL%/assets/js/jquery-3.6.4.js"></script>
-  <script src="%PUBLIC_URL%/assets/js/bootstrap.bundle.min.js"></script>
-  <script src="%PUBLIC_URL%/assets/js/aos.js"></script>
-  <script src="%PUBLIC_URL%/assets/js/main.js"></script>
+  <!-- <script src="public/assets/js/jquery-3.6.4.js"></script>
+  <script src="public/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="public/assets/js/aos.js"></script>
+  <script src="public/assets/js/main.js"></script> -->
+
+  <script>
+
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+
+    const colors = [
+      "#5b78f6", "#6f83f7", "#818ff9", "#919bfa", "#a0a7fb", "#afb3fc", "#bdbffc", "#caccfd", "#d8d8fe", "#e5e5fe", "#f2f2ff", "#ffffff"
+    ];
+
+
+    circles.forEach(function (circle, index) {
+      circle.x = 0;
+      circle.y = 0;
+      circle.style.backgroundColor = colors[index % colors.length];
+    });
+
+    window.addEventListener("mousemove", function (e) {
+      coords.x = e.clientX;
+      coords.y = e.clientY;
+
+    });
+
+    function animateCircles() {
+
+      let x = coords.x;
+      let y = coords.y;
+
+      circles.forEach(function (circle, index) {
+        circle.style.left = x - 12 + "px";
+        circle.style.top = y - 12 + "px";
+
+        circle.style.scale = (circles.length - index) / circles.length;
+
+        circle.x = x;
+        circle.y = y;
+
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
+      });
+
+      requestAnimationFrame(animateCircles);
+    }
+
+    animateCircles();
+  </script>
 </body>
 
 </html>
