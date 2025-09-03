@@ -1,9 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import bg1 from "../assets/images/bg1.png";
 import icon3 from "../assets/images/icon3.png";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [status, setStatus] = useState({ type: "", message: "" });
+
   useEffect(() => {
     if (window.AOS) {
       window.AOS.init({
@@ -13,6 +21,36 @@ const Contact = () => {
       window.AOS.refresh();
     }
   }, []);
+
+  // handle input change
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // handle form submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ type: "loading", message: "Sending..." });
+
+    try {
+      const res = await fetch("http://localhost:8070/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setStatus({ type: "success", message: "✅ Email sent successfully!" });
+        setFormData({ fullName: "", email: "", subject: "", message: "" }); // clear form
+      } else {
+        setStatus({ type: "error", message: data.error || "Failed to send." });
+      }
+    } catch (err) {
+      setStatus({ type: "error", message: "Something went wrong." });
+    }
+  };
+
   return (
     <>
       <div className="contact-area">
@@ -86,13 +124,17 @@ const Contact = () => {
                 <h1>
                   Let’s work <span>together.</span>
                 </h1>
-                <form method="POST">
+
+                <form onSubmit={handleSubmit}>
                   <div className="input-group">
                     <input
                       type="text"
-                      name="full-name"
+                      name="fullName"
                       id="full-name"
                       placeholder="Name *"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      required
                     />
                   </div>
                   <div className="input-group">
@@ -101,6 +143,9 @@ const Contact = () => {
                       name="email"
                       id="email"
                       placeholder="Email *"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
                     />
                   </div>
                   <div className="input-group">
@@ -109,6 +154,9 @@ const Contact = () => {
                       name="subject"
                       id="subject"
                       placeholder="Your Subject *"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      required
                     />
                   </div>
                   <div className="input-group">
@@ -116,6 +164,9 @@ const Contact = () => {
                       name="message"
                       id="message"
                       placeholder="Your Message *"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
                     ></textarea>
                   </div>
                   <div className="input-group">
@@ -128,6 +179,23 @@ const Contact = () => {
                     </button>
                   </div>
                 </form>
+
+                {/* status message */}
+                {status.message && (
+                  <p
+                    style={{
+                      marginTop: "10px",
+                      color:
+                        status.type === "success"
+                          ? "green"
+                          : status.type === "error"
+                          ? "red"
+                          : "black",
+                    }}
+                  >
+                    {status.message}
+                  </p>
+                )}
               </div>
             </div>
           </div>
@@ -138,3 +206,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
