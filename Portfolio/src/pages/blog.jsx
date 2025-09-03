@@ -61,7 +61,7 @@ const Blog = () => {
                   </div>
                 </div>
 
-                <div className="blog-item" data-aos="zoom-in">
+                {/* <div className="blog-item" data-aos="zoom-in">
                   <div className="img-box">
                     <img src={blo2} alt="Blog" />
                   </div>
@@ -92,9 +92,9 @@ const Blog = () => {
                       Read More
                     </Link>
                   </div>
-                </div>
+                </div> */}
 
-                <div className="blog-item" data-aos="zoom-in">
+                {/* <div className="blog-item" data-aos="zoom-in">
                   <div className="img-box">
                     <img src={blo3} alt="Blog" />
                   </div>
@@ -118,7 +118,7 @@ const Blog = () => {
                       Read More
                     </Link>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -175,27 +175,7 @@ const Blog = () => {
                     className="blog-sidebar-widget categories-widget"
                     data-aos="zoom-in"
                   >
-                    <div className="blog-sidebar-widget-inner shadow-box">
-                      <h3>Categories</h3>
-
-                      <ul>
-                        <li>
-                          <Link to="/blog-details">-Analysis</Link>
-                        </li>
-                        <li>
-                          <Link to="/blog-details">-Firewall</Link>
-                        </li>
-                        <li>
-                          <Link to="/blog-details">-IT Solutions</Link>
-                        </li>
-                        <li>
-                          <Link to="/blog-details">-Security</Link>
-                        </li>
-                        <li>
-                          <Link to="/blog-details">-Technology</Link>
-                        </li>
-                      </ul>
-                    </div>
+                    
                   </div>
                 </div>
               </div>
