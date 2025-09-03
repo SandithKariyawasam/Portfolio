@@ -34,6 +34,8 @@ const Blog = () => {
           <div className="row">
             <div className="col-md-8">
               <div className="blog-items">
+
+                
                 <div className="blog-item" data-aos="zoom-in">
                   <div className="img-box">
                     <img src={blo1} alt="Blog" />

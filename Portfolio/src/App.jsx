@@ -12,6 +12,7 @@ import Contact from "./pages/contact";
 import Service from "./pages/service";
 import Workdetails from "./pages/work-details";
 import Blogdetails from "./pages/blog-details";
+import Login from "./pages/Login";
 import Header from "./component/header";
 import Footer from "./component/footer";
 import { BrowserRouter, Route, Routes } from "react-router";
@@ -27,6 +28,7 @@ function App() {
           <Route path="/credentials" element={<Credentials />} />
           <Route path="/works" element={<Works />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/service" element={<Service />} />
           <Route path="/work-details" element={<Workdetails />} />

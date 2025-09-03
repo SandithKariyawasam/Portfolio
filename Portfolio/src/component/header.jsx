@@ -33,13 +33,13 @@ const Header = () => {
                 <Link to="/contact">Contact</Link>
               </li>
             </ul>
-            <Link to="/contact" className="theme-btn">
-              Let's talk
+            <Link to="/login" className="theme-btn">
+              Login
             </Link>
           </nav>
 
-          <Link to="/contact" className="theme-btn">
-            Let's talk
+          <Link to="/login" className="theme-btn">
+            Login
           </Link>
 
           <div className="show-menu">
