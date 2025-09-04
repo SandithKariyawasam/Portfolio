@@ -15,9 +15,15 @@ import Blogdetails from "./pages/blog-details";
 import Login from "./pages/Login";
 import Header from "./component/header";
 import Footer from "./component/footer";
-import { BrowserRouter, Route, Routes } from "react-router";
+
+import { Routes, Route, useLocation } from "react-router-dom";
 
 function App() {
+  const location = useLocation();
+
+  // hide footer on login
+  const hideFooter = location.pathname === "/login";
+
   return (
     <>
       <Header />
@@ -35,7 +41,7 @@ function App() {
           <Route path="/blog-details" element={<Blogdetails />} />
         </Routes>
       </main>
-      <Footer />
+      {!hideFooter && <Footer />}
     </>
   );
 }
