@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../assets/css/form.css";
 import "../assets/css/bootstrap.min.css";
 import "../assets/css/aos.css";
@@ -9,6 +10,8 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
+
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -29,7 +32,12 @@ const Login = () => {
             } else {
                 setMessage("✅ Login successful!");
                 console.log("Admin:", data.admin);
-                // 👉 Later: save token/localStorage here
+                
+                // Save token to localStorage
+                localStorage.setItem("token", data.token);
+
+                // Redirect to dashboard
+                navigate("/dashboard");
             }
         } catch (err) {
             setError("Something went wrong. Try again.");

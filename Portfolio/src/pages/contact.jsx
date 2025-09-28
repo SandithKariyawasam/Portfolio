@@ -190,7 +190,7 @@ const Contact = () => {
                           ? "green"
                           : status.type === "error"
                           ? "red"
-                          : "black",
+                          : "white",
                     }}
                   >
                     {status.message}
