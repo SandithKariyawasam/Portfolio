@@ -16,6 +16,8 @@ import Login from "./pages/Login";
 import Header from "./component/header";
 import Footer from "./component/footer";
 
+import PrivateRoute from "./component/PrivateRoute";
+
 import Dashboard from "./dashboard/dashboard"
 
 import { Routes, Route, useLocation } from "react-router-dom";
@@ -51,7 +53,7 @@ function App() {
           <Route path="/work-details" element={<Workdetails />} />
           <Route path="/blog-details" element={<Blogdetails />} />
 
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<PrivateRoute> <Dashboard /> </PrivateRoute>} />
         </Routes>
       </main>
       {!hideFooter && <Footer />}

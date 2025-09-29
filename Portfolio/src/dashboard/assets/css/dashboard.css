@@ -50,6 +50,12 @@
   width: auto;
 }
 
+button{
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
 .nav-menu {
   display: flex;
   flex-direction: column;

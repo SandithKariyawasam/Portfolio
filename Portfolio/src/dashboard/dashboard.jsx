@@ -1,64 +1,21 @@
 import React from 'react'
 import './assets/css/dashboard.css'
 
+import Sidenavbar from '../component/sidenavbar'
+
 const dashboard = () => {
   return (
     <>
       <div className="dbbody">
-        <div class="sidebar">
-          <div class="logo">
-            <svg width="100" height="40" viewBox="0 0 100 40">
-              <path d="M12,15 L30,15 L24,27 L12,27 Z" fill="#4270F4" />
-              <text x="38" y="27" fill="#262A39" font-size="20" font-weight="bold">
-                FinFlow
-              </text>
-            </svg>
-          </div>
 
-          <div class="nav-menu">
-            <a href="#" class="nav-item active">
-              <i class="fas fa-home"></i>
-              <span>Home</span>
-            </a>
-            <a href="#" class="nav-item">
-              <i class="fas fa-user-circle"></i>
-              <span>Account</span>
-            </a>
-            <a href="#" class="nav-item">
-              <i class="fas fa-wallet"></i>
-              <span>Payments</span>
-            </a>
-            <a href="#" class="nav-item">
-              <i class="fas fa-sliders-h"></i>
-              <span>Preferences</span>
-            </a>
-            <a href="#" class="nav-item">
-              <i class="fas fa-comment-dots"></i>
-              <span>Inbox</span>
-            </a>
-            <a href="#" class="nav-item">
-              <i class="fas fa-chart-line"></i>
-              <span>Insights</span>
-            </a>
-            <a href="#" class="nav-item">
-              <i class="fas fa-life-ring"></i>
-              <span>Help Center</span>
-            </a>
-          </div>
-
-          <div class="premium-box">
-            <h3>Upgrade to Elite Plan</h3>
-            <button class="premium-btn">Try Free</button>
-          </div>
-        </div>
-
+        <Sidenavbar/>
 
         <div class="main-content">
 
           <div class="header">
             <div class="welcome-section">
-              <p class="greeting">Good afternoon, Alex,</p>
-              <h1 class="welcome-title">Your Financial Overview</h1>
+              <p class="greeting">Good afternoon, Sandith</p>
+              <h1 class="welcome-title">Your Projects Overview</h1>
             </div>
 
             <div class="header-right">
@@ -75,10 +32,7 @@ const dashboard = () => {
                 />
               </div>
 
-              <div class="search-bar">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Find transactions..." />
-              </div>
+              
             </div>
           </div>
 
