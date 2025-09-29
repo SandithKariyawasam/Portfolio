@@ -25,17 +25,16 @@ import { Routes, Route, useLocation } from "react-router-dom";
 function App() {
   const location = useLocation();
 
-  // List of paths where footer should be hidden
-  const hideFooterPaths = ["/login", "/dashboard", "/page1", "/page2", "/page3", "/page4", "/page5"];
-
-  // hide footer
-  const hideFooter = hideFooterPaths.includes(location.pathname);
+  // hide footer on login + any dashboard route
+  const hideFooter =
+    location.pathname === "/login" || location.pathname.startsWith("/dashboard");
 
   // List of paths where footer should be hidden
   const hideHeaderPaths = ["/dashboard", "/page1", "/page2", "/page3", "/page4", "/page5"];
 
-  // hide footer
-  const hideHeader = hideHeaderPaths.includes(location.pathname);
+  // hide header on any dashboard route
+  const hideHeader = location.pathname.startsWith("/dashboard");
+
 
   return (
     <>
@@ -53,7 +52,7 @@ function App() {
           <Route path="/work-details" element={<Workdetails />} />
           <Route path="/blog-details" element={<Blogdetails />} />
 
-          <Route path="/dashboard" element={<PrivateRoute> <Dashboard /> </PrivateRoute>} />
+          <Route path="/dashboard/*" element={<PrivateRoute> <Dashboard /> </PrivateRoute>} />
         </Routes>
       </main>
       {!hideFooter && <Footer />}
