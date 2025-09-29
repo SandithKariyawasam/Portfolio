@@ -14,7 +14,7 @@ const footer = () => {
                         <a href="./index.html" className="logo">
                             <img src={logo} alt="Logo" />
                         </a>
-                        <ul className="footer-menu">
+                        {/* <ul className="footer-menu">
                             <li>
                                 <Link to="/">Home</Link>
                             </li>
@@ -27,7 +27,7 @@ const footer = () => {
                             <li>
                                 <Link to="/contact">Contact</Link>
                             </li>
-                        </ul>
+                        </ul> */}
                         <p className="copyright">
                             &copy; All rights reserved by <span>BravoScript</span>
                         </p>
