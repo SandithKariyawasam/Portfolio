@@ -12,11 +12,17 @@
   "dependencies": {
     "aos": "^2.3.4",
     "bootstrap": "^5.3.7",
+    "d3-geo": "^3.1.1",
     "jquery": "^3.7.1",
+    "leaflet": "^1.9.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-google-charts": "^5.2.1",
     "react-helmet": "^6.1.0",
-    "react-router-dom": "^7.5.3"
+    "react-leaflet": "^5.0.0",
+    "react-router-dom": "^7.5.3",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
