@@ -1,0 +1,112 @@
+/* Promo Card */
+.promo-card-account {
+    background: rgb(255, 255, 255);
+    border-radius: var(--border-radius);
+    padding: 35px;
+    display: grid;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: var(--card-shadow);
+}
+
+/* Data Table */
+.table-card {
+    background-color: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    margin-bottom: 25px;
+    animation: fadeInUp 0.7s ease;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.data-table th,
+.data-table td {
+    padding: 16px 24px;
+    text-align: left;
+}
+
+.data-table th {
+    font-weight: 600;
+    color: var(--text);
+    background-color: #f8f9fa;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 1px 0 0 var(--border);
+}
+
+.data-table th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.data-table th:last-child {
+    border-top-right-radius: 8px;
+}
+
+.data-table td {
+    border-bottom: 1px solid var(--border);
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tbody tr {
+    transition: var(--transition);
+}
+
+.data-table tbody tr:hover {
+    background-color: rgba(67, 97, 238, 0.03);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.table-card img{
+    border-radius: 10px;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 12px;
+}
+
+.status {
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+}
+
+.status i {
+    margin-right: 6px;
+    font-size: 12px;
+}
+
+.status.active {
+    background-color: rgba(76, 201, 240, 0.15);
+    color: #0891b2;
+    border: 1px solid rgba(76, 201, 240, 0.3);
+}
+
+.status.pending {
+    background-color: rgba(248, 150, 30, 0.15);
+    color: #d97706;
+    border: 1px solid rgba(248, 150, 30, 0.3);
+}
+
+.status.cancelled {
+    background-color: rgba(247, 37, 133, 0.15);
+    color: #db2777;
+    border: 1px solid rgba(247, 37, 133, 0.3);
+}
+
