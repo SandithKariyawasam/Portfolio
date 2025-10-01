@@ -32,7 +32,7 @@ const Login = () => {
             } else {
                 setMessage("✅ Login successful!");
                 console.log("Admin:", data.admin);
-                
+
                 // Save token to localStorage
                 localStorage.setItem("token", data.token);
 
@@ -46,47 +46,50 @@ const Login = () => {
     return (
         <>
             <div className="page-container">
-                <div class="form-container">
-                    <p class="title">Login</p>
-                    <form className="form" onSubmit={handleSubmit}>
+                <form className="form" onSubmit={handleSubmit}>
+                    <p className="title">
+                        <span className="pulse-dot" aria-hidden="true"></span>
+                        Login
+                    </p>
+                    <p className="message">SignIn now and get full access to our web.</p>
 
-                        <div className="input-group">
-                            <label htmlFor="email">Email</label>
-                            <input
-                                type="email"
-                                id="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                            />
-                        </div>
+                    <label>
+                        <input
+                            className="input"
+                            type="email"
+                            id="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                        <span>Email</span>
+                    </label>
 
-                        <div className="input-group">
-                            <label htmlFor="password">Password</label>
-                            <input
-                                type="password"
-                                id="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <br/>
+                    <label>
+                        <input
+                            className="input"
+                            type="password"
+                            id="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                        <span>Password</span>
+                    </label>
+
+                    <label>
                         {error && <p style={{ color: "red" }}>{error}</p>}
                         {message && <p style={{ color: "green" }}>{message}</p>}
-                        <br/>
+                    </label>
 
-                        <button type="submit" className="sign">
-                            Sign in
-                        </button>
-
-                    </form>
-                    <div class="social-message">
-                        <div class="line"></div>
-                        <p class="message">Only admin can login here.Users does not allow to login</p>
-                        <div class="line"></div>
-                    </div>
-                </div>
+                    <button type="submit" className="submit">
+                        SignIn
+                    </button>
+                    <br />
+                    <p className="signin">
+                        Only admin can login here. Still users are not allowed to login.
+                    </p>
+                </form>
             </div>
         </>
     )
