@@ -34,7 +34,7 @@ const BlogDetails = () => {
                 <div class="img-box">
                   <img src={blog3} alt="Blog" />
                 </div>
-                <span class="meta">25 March 2022 - Share (7)</span>
+                <span class="meta">25 March 2022 - 12.35 PM</span>
                 <h1>
                   💡𝗣𝗿𝗼𝗴𝗿𝗮𝗺𝗺𝗶𝗻𝗴 𝗧𝗶𝗽 - 𝗦𝗻𝗮𝗸𝗲 𝗖𝗮𝘀𝗲 vs 𝗞𝗲𝗯𝗮𝗯 𝗖𝗮𝘀𝗲 vs 𝗖𝗮𝗺𝗲𝗹 𝗖𝗮𝘀𝗲 vs
                   𝗣𝗮𝘀𝗰𝗮𝗹 𝗖𝗮𝘀𝗲
@@ -160,7 +160,7 @@ const BlogDetails = () => {
                     class="blog-sidebar-widget categories-widget"
                     data-aos="zoom-in"
                   >
-                    <div class="blog-sidebar-widget-inner shadow-box">
+                    {/* <div class="blog-sidebar-widget-inner shadow-box">
                       <h3>Categories</h3>
 
                       <ul>
@@ -180,7 +180,7 @@ const BlogDetails = () => {
                           <a href="/blog-details">-Technology</a>
                         </li>
                       </ul>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
