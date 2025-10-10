@@ -1,11 +1,141 @@
 import React from 'react'
+import '../assets/css/projects.css'
+import ex from '../../assets/images/project-dt-1.png'
+import pr1 from '../../assets/images/Project1.png'
+import pr2 from '../../assets/images/Project2.png'
+import pr3 from '../../assets/images/Project3.png'
 
 const projects = () => {
   return (
-    <div>
-      <h1>Your Projects</h1>
-      <p>Here you can manage your projects.</p>
-    </div>
+    <>
+      <div className="dashboard-container">
+
+        <div className="dashboard-main">
+
+          <div className="promo-card-account">
+            <h3 className="section-title">Project Details</h3>
+            <div className="section_form">
+              <form id="consultation-form" className="feed-form" action="#">
+                <input required="" placeholder="Cover Name" type="text" />
+
+                <div className="file-upload-form">
+                  <label htmlFor="file" className="file-upload-label">
+                    <div className="file-upload-design">
+                      <svg viewBox="0 0 640 512" height="1em">
+                        <path
+                          d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39V392c0 13.3 10.7 24 24 24s24-10.7 24-24V257.9l39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z"
+                        ></path>
+                      </svg>
+                      <p>Drag and Drop Cover Photo</p>
+                      <p>or</p>
+                      <span class="browse-button">Browse Cover Photo</span>
+                    </div>
+                    <input id="file" type="file" />
+                  </label>
+                  <img src={pr1} alt="profile pic" />
+                </div>
+
+                <input required="" placeholder="Title" type="text" />
+
+                <textarea required placeholder="About" rows="4" cols="50"></textarea>
+
+                <div className="file-upload-form">
+                  <label htmlFor="file" className="file-upload-label">
+                    <div className="file-upload-design">
+                      <svg viewBox="0 0 640 512" height="1em">
+                        <path
+                          d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39V392c0 13.3 10.7 24 24 24s24-10.7 24-24V257.9l39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z"
+                        ></path>
+                      </svg>
+                      <p>Drag and Drop 1:5 Image</p>
+                      <p>or</p>
+                      <span class="browse-button">Browse for 1:5 Image</span>
+                    </div>
+                    <input id="file" type="file" />
+                  </label>
+                  <img src={ex} alt="profile pic" />
+                </div>
+
+                <div className="file-upload-form">
+                  <label htmlFor="file" className="file-upload-label">
+                    <div className="file-upload-design">
+                      <svg viewBox="0 0 640 512" height="1em">
+                        <path
+                          d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39V392c0 13.3 10.7 24 24 24s24-10.7 24-24V257.9l39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z"
+                        ></path>
+                      </svg>
+                      <p>Drag and Drop 4 Images</p>
+                      <p>or</p>
+                      <span class="browse-button">Browse for 4 Images</span>
+                    </div>
+                    <input id="file" type="file" />
+                  </label>
+                  <img src={pr1} alt="profile pic" />
+                  <img src={pr1} alt="profile pic" />
+                  <img src={pr1} alt="profile pic" />
+                  <img src={pr1} alt="profile pic" />
+                </div>
+
+                <input required="" placeholder="Year" type="number" />
+
+                <input required="" placeholder="Client" type="text" />
+
+                <select name="cars" id="service">
+                  <option value="WEB DESIGNING">WEB DESIGNING</option>
+                  <option value="APP DESIGNING">APP DESIGNING</option>
+                  <option value="CLOUD SERVICES">CLOUD SERVICES</option>
+                  <option value="UI/UX DESIGN">UI/UX DESIGN</option>
+                </select>
+
+                <select name="cars" id="type">
+                  <option value="Front-End">Front-End</option>
+                  <option value="Back-End">Back-End</option>
+                  <option value="Full-Stack">Full-Stack</option>
+                </select>
+
+                <textarea required placeholder="Description" rows="10" cols="50"></textarea>
+
+                <button className="button_submit">SUBMIT</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+        <div className="dashboard-sidebar">
+
+
+          <div className="transaction-card">
+            <h3 className="section-title">All Projects</h3>
+
+            <div class="book">
+              <p>AutoBid</p>
+              <div class="cover">
+                <img src={pr1} alt="profile pic" />
+              </div>
+            </div>
+
+            <div class="book">
+              <p>HelaFix</p>
+              <div class="cover">
+                <img src={pr2} alt="profile pic" />
+              </div>
+            </div>
+
+            <div class="book">
+              <p>Helaya</p>
+              <div class="cover">
+                <img src={pr3} alt="profile pic" />
+              </div>
+            </div>
+            
+
+          </div>
+
+
+        </div>
+      </div>
+    </>
   )
 }
 
