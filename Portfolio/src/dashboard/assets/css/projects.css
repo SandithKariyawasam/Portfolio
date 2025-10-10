@@ -83,7 +83,7 @@ textarea{
   transform: rotatey(-80deg);
 }
 
-p {
+.book p {
   font-size: 20px;
   font-weight: bolder;
 }
