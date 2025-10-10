@@ -48,7 +48,6 @@ const Login = () => {
             <div className="page-container">
                 <form className="form" onSubmit={handleSubmit}>
                     <p className="title">
-                        <span className="pulse-dot" aria-hidden="true"></span>
                         Login
                     </p>
                     <p className="message">SignIn now and get full access to our web.</p>

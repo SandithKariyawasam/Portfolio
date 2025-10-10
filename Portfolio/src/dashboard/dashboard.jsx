@@ -28,8 +28,8 @@ const Dashboard = () => {
 
           {/* content here */}
           <Routes>
-            <Route index element={<Home />} />  {/* renders at /dashboard */}
-            <Route path="account" element={<Account />} />  {/* renders at /dashboard/account */}
+            <Route index element={<Home />} />
+            <Route path="account" element={<Account />} />
             <Route path="projects" element={<Projects />} />
             <Route path="blogs" element={<Blogs />} />
             <Route path="inbox" element={<Inbox />} />
