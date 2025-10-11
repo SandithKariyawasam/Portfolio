@@ -87,3 +87,24 @@ textarea{
   font-size: 20px;
   font-weight: bolder;
 }
+
+.popup-overlay-projects {
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 186.5%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.popup-box-projects {
+  background: white;
+  padding: 20px 40px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 18px;
+}
