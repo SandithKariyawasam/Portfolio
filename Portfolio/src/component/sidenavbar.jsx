@@ -24,7 +24,7 @@ const sidenavbar = () => {
                         <i class="fas fa-home"></i>
                         <span><Link to="/dashboard">Home</Link></span>
                     </button>
-                    <button class={`nav-item ${isActive("/dashboard/account")}`}>
+                    <button class={`nav-item ${isActive("/dashboard/account")} && nav-item ${isActive("/dashboard/profile")}`}>
                         <i class="fas fa-user-circle"></i>
                         <span><Link to="/dashboard/account">Account</Link></span>
                     </button>

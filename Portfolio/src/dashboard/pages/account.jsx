@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
 
 import '../assets/css/account.css'
 import me from '../../assets/images/me2.jpeg'
@@ -13,6 +15,12 @@ const account = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showDeletePopup, setShowDeletePopup] = useState(false);
   const [showConfirmAddPopup, setShowAddPopup] = useState(false);
+
+  const navigate = useNavigate();
+
+  const visiteProfile = () => {
+    navigate("/dashboard/profile");
+  };
 
 
   const handleSubmit = (e) => {
@@ -574,9 +582,9 @@ const account = () => {
 
               <button type="submit" className="button_submit">UPDATE</button>
               <br />
-              <button type="button" className="button_submit" style={{ backgroundColor: '#15ff00ff', color: '#000000ff' }}>Visit Profile</button>
+              <button type="button" className="button_submit" style={{ backgroundColor: '#15ff00ff', color: '#000000ff' }} onClick={visiteProfile}>Visit Profile</button>
               <br />
-              <button type="button" className="button_submit" onClick={() => setShowPopup(false)} style={{ backgroundColor: 'red' }}>CANCEL</button>
+              <button type="button" className="button_submit" style={{ backgroundColor: 'red' }} onClick={() => setShowPopup(false)}>CANCEL</button>
               <br />
               <button type="button" className="button_submit" style={{ backgroundColor: '#fd6161' }} onClick={() => setShowDeletePopup(true)}             >
                 <i className="fa-solid fa-trash"></i>

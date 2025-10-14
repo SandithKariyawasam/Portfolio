@@ -12,6 +12,7 @@ import Inbox from './pages/inbox'
 import Insights from './pages/insights'
 import Customize from './pages/customize'
 import Live from './pages/live'
+import Profile from './pages/profile'
 
 const Dashboard = () => {
   return (
@@ -36,6 +37,7 @@ const Dashboard = () => {
             <Route path="insights" element={<Insights />} />
             <Route path="customize" element={<Customize />} />
             <Route path="live" element={<Live />} />
+            <Route path="profile" element={<Profile />} />
           </Routes>
 
 
