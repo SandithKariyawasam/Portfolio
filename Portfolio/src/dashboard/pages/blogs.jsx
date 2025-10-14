@@ -7,8 +7,12 @@ import pr1 from '../../assets/images/project1.png'
 import pr2 from '../../assets/images/project2.png'
 import pr3 from '../../assets/images/project3.png'
 
+import ex from '../../assets/images/project-dt-1.png'
+
 const blogs = () => {
 
+  const [showPopup, setShowPopup] = useState(false);
+  const [showUserPopup, setShowUserPopup] = useState(false);
 
   return (
     <>
@@ -32,7 +36,7 @@ const blogs = () => {
                     <i class="fa-sharp fa-solid fa-heart"></i> 356
                   </div>
                 </div>
-                <button className='liked-btn'>View</button>
+                <button className='liked-btn' onClick={() => setShowUserPopup(true)}>View</button>
               </div>
 
               <div class="transaction-item">
@@ -84,7 +88,7 @@ const blogs = () => {
 
               </div>
 
-              <h3 className="section-title" style={{marginTop:"20px"}}>My Analytics</h3>
+              <h3 className="section-title" style={{ marginTop: "20px" }}>My Analytics</h3>
 
               <div className="transaction-wrap">
 
@@ -135,6 +139,7 @@ const blogs = () => {
                     <td>
                       <button
                         className="liked-btn"
+                        onClick={() => setShowUserPopup(true)}
                       >View</button>
                     </td>
                   </tr>
@@ -292,7 +297,7 @@ const blogs = () => {
 
             <br />
 
-            <div class="book">
+            <div class="book" onClick={() => setShowPopup(true)}>
               <p>AutoBid</p>
               <div class="cover">
                 <img src={pr1} alt="profile pic" />
@@ -320,6 +325,80 @@ const blogs = () => {
 
         </div>
       </div>
+
+      {showPopup && (
+        <div className="popup-overlay-projects" onClick={() => setShowPopup(false)}>
+          <div className="popup-box-projects" onClick={(e) => e.stopPropagation()}>
+            <form id="consultation-form" className="feed-form" action="#">
+              <h4>AutoBid</h4>
+              <input required="" placeholder="Title" type="text" value={("💡𝗣𝗿𝗼𝗴𝗿𝗮𝗺𝗺𝗶𝗻𝗴 𝗧𝗶𝗽 - 𝗦𝗻𝗮𝗸𝗲 𝗖𝗮𝘀𝗲 vs 𝗞𝗲𝗯𝗮𝗯 𝗖𝗮𝘀𝗲 vs 𝗖𝗮𝗺𝗲𝗹 𝗖𝗮𝘀𝗲 vs 𝗣𝗮𝘀𝗰𝗮𝗹 𝗖𝗮𝘀𝗲")}/>
+
+              <textarea required placeholder="Description" rows="10" cols="50" value={("🔥In the programming world, consistent and clear code is essential. This extends beyond code structure to how you name elements like variables, methods, functions, classes and files. Naming conventions provide rules or guidelines developers follow to ensure code consistency and clarity.Let's explore four common naming conventions:✅ Snake Case: Words are separated by underscores (_), each in lowercase. It's commonly used in languages like Python for variable and function names.Ex: customer_name, user_name")}></textarea>
+
+              <div className="file-upload-form">
+                <label htmlFor="file" className="file-upload-label">
+                  <div className="file-upload-design">
+                    <svg viewBox="0 0 640 512" height="1em">
+                      <path
+                        d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39V392c0 13.3 10.7 24 24 24s24-10.7 24-24V257.9l39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z"
+                      ></path>
+                    </svg>
+                    <p>Drag and Drop</p>
+                    <p>or</p>
+                    <span class="browse-button">Browse file</span>
+                  </div>
+                  <input id="file" type="file" />
+                </label>
+                <img src={me} alt="profile pic" />
+              </div>
+
+              <button className="button_submit">SUBMIT</button>
+              <br />
+              <button type="button" className="button_submit" onClick={() => setShowPopup(false)} style={{ backgroundColor: 'red' }}>CANCEL</button>
+              <br />
+              <button type="button" className="button_submit" style={{ backgroundColor: '#fd6161' }} ><i className="fa-solid fa-trash"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {showUserPopup && (
+        <div className="popup-overlay-projects" onClick={() => setShowUserPopup(false)}>
+          <div className="popup-box-projects" onClick={(e) => e.stopPropagation()}>
+            <form id="consultation-form" className="feed-form" action="#">
+              <h4>Id: 00001</h4>
+              <input required="" placeholder="Title" type="text" value={("💡𝗣𝗿𝗼𝗴𝗿𝗮𝗺𝗺𝗶𝗻𝗴 𝗧𝗶𝗽 - 𝗦𝗻𝗮𝗸𝗲 𝗖𝗮𝘀𝗲 vs 𝗞𝗲𝗯𝗮𝗯 𝗖𝗮𝘀𝗲 vs 𝗖𝗮𝗺𝗲𝗹 𝗖𝗮𝘀𝗲 vs 𝗣𝗮𝘀𝗰𝗮𝗹 𝗖𝗮𝘀𝗲")}/>
+
+              <textarea required placeholder="Description" rows="10" cols="50" value={("🔥In the programming world, consistent and clear code is essential. This extends beyond code structure to how you name elements like variables, methods, functions, classes and files. Naming conventions provide rules or guidelines developers follow to ensure code consistency and clarity.Let's explore four common naming conventions:✅ Snake Case: Words are separated by underscores (_), each in lowercase. It's commonly used in languages like Python for variable and function names.Ex: customer_name, user_name")}></textarea>
+
+              <div className="file-upload-form">
+                <label htmlFor="file" className="file-upload-label">
+                  <div className="file-upload-design">
+                    <svg viewBox="0 0 640 512" height="1em">
+                      <path
+                        d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39V392c0 13.3 10.7 24 24 24s24-10.7 24-24V257.9l39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z"
+                      ></path>
+                    </svg>
+                    <p>Drag and Drop</p>
+                    <p>or</p>
+                    <span class="browse-button">Browse file</span>
+                  </div>
+                  <input id="file" type="file" />
+                </label>
+                <img src={me} alt="profile pic" />
+              </div>
+
+              <button className="button_submit">SUBMIT</button>
+              <br />
+              <button type="button" className="button_submit" onClick={() => setShowPopup(false)} style={{ backgroundColor: 'red' }}>CANCEL</button>
+              <br />
+              <button type="button" className="button_submit" style={{ backgroundColor: '#fd6161' }} ><i className="fa-solid fa-trash"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
 
     </>
   )
