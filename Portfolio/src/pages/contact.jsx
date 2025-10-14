@@ -33,7 +33,7 @@ const Contact = () => {
     setStatus({ type: "loading", message: "Sending..." });
 
     try {
-      const res = await fetch("http://localhost:8070/api/send-email", {
+      const res = await fetch("https://sandithkariyawasam-aggzh5gxf8hae0ge.eastasia-01.azurewebsites.net/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

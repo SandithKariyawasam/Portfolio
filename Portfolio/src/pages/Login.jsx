@@ -19,7 +19,7 @@ const Login = () => {
         setError("");
 
         try {
-            const response = await fetch("http://localhost:8070/admins/login", {
+            const response = await fetch("https://sandithkariyawasam-aggzh5gxf8hae0ge.eastasia-01.azurewebsites.net/admins/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password }),
@@ -41,6 +41,7 @@ const Login = () => {
             }
         } catch (err) {
             setError("Something went wrong. Try again.");
+            console.error("Login error:", err);
         }
     };
     return (
