@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import '../assets/css/projects.css'
 import ex from '../../assets/images/project-dt-1.png'
-import pr1 from '../../assets/images/Project1.png'
-import pr2 from '../../assets/images/Project2.png'
-import pr3 from '../../assets/images/Project3.png'
+import pr1 from '../../assets/images/project1.png'
+import pr2 from '../../assets/images/project2.png'
+import pr3 from '../../assets/images/project3.png'
 
 const projects = () => {
   const [showPopup, setShowPopup] = useState(false);
