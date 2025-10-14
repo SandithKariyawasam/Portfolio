@@ -3,9 +3,9 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 import '../assets/css/blog.css'
 import me from '../../assets/images/me2.jpeg'
-import pr1 from '../../assets/images/Project1.png'
-import pr2 from '../../assets/images/Project2.png'
-import pr3 from '../../assets/images/Project3.png'
+import pr1 from '../../assets/images/project1.png'
+import pr2 from '../../assets/images/project2.png'
+import pr3 from '../../assets/images/project3.png'
 
 const blogs = () => {
 
