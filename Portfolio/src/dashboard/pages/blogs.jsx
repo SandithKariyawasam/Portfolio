@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 import '../assets/css/blog.css'
 import me from '../../assets/images/me2.jpeg'
@@ -7,7 +6,6 @@ import pr1 from '../../assets/images/project1.png'
 import pr2 from '../../assets/images/project2.png'
 import pr3 from '../../assets/images/project3.png'
 
-import ex from '../../assets/images/project-dt-1.png'
 
 const blogs = () => {
 
