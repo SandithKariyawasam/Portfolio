@@ -15,7 +15,7 @@ const Header = () => {
       <div className="container">
         <div className="gx-row d-flex align-items-center justify-content-between">
           <Link to="/" className="logo">
-            <img src={logo} alt="Logo" />
+            <img src={logo} style={{ top: "50%", transform: "translateY(20%)" }} alt="Logo" />
           </Link>
 
           <nav className="navbar">
@@ -40,6 +40,9 @@ const Header = () => {
 
           <Link to="/login" className="theme-btn">
             Login
+          </Link>
+          <Link to="/dashboard" className="theme-btn">
+            Dashboard
           </Link>
 
           <div className="show-menu">

@@ -41,8 +41,7 @@
   animation: pulse 1s linear infinite;
 }
 
-.title::before,
-.title::after {
+.title::before {
   position: absolute;
   content: "";
   height: 16px;
@@ -50,6 +49,16 @@
   border-radius: 50%;
   left: 0px;
   background-color: #00bfff;
+}
+
+.title::after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  background-color: #00bfff;
+  left: 8px;
+  top: 9px;
+  animation: pulse 1.5s linear infinite;
 }
 
 .message, 
