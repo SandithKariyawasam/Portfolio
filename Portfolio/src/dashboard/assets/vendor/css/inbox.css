@@ -1,0 +1,264 @@
+/* ---------------------------
+   General Layout
+--------------------------- */
+
+
+.card {
+  border: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.card-body {
+  display: flex;
+  gap: 25px;
+}
+
+/* ---------------------------
+   Left Sidebar
+--------------------------- */
+.email-left-box {
+  width: 240px;
+  color: #fff;
+  padding: 20px 0;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.email-left-box .btn-primary {
+  background: #4270f4;
+  border: none;
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  border-radius: 0px;
+  font-weight: 500;
+}
+
+.email-left-box .mail-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+.email-left-box .list-group-item {
+  padding: 12px 25px;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.email-left-box .list-group-item i {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.email-left-box .list-group-item.active,
+.email-left-box .list-group-item:hover {
+  background: #4270f4;
+  color: #fff;
+}
+
+.email-left-box .badge {
+  float: right;
+  font-size: 12px;
+  border-radius: 8px;
+  padding: 3px 8px;
+}
+
+/* ---------------------------
+   Right Section
+--------------------------- */
+.email-right-box {
+  flex: 1;
+  background: #fff;
+  border-radius: 8px;
+  padding: 25px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn.light {
+  background: #f3f6f6;
+  color: #333;
+  border: 1px solid #e1e1e1;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.btn.light:hover {
+  background: #e8eeee;
+}
+
+/* ---------------------------
+   Email List
+--------------------------- */
+.email-list {
+  margin-top: 20px;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s;
+}
+
+.message:hover {
+  background: #f8f9fa;
+}
+
+.message-single {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.col-mail {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 200px;
+}
+.col-mail-2 {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #444;
+}
+
+.col-mail-2 .subject {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #4b4b4b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.col-mail-2 .date {
+  font-size: 13px;
+  color: #999;
+  min-width: 70px;
+  text-align: right;
+}
+
+/* Unread Message */
+.message.unread {
+  background: #f4f5fd;
+  font-weight: 600;
+}
+
+/* ---------------------------
+   Pagination
+--------------------------- */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 5px;
+}
+
+.pagination .page-item .page-link {
+  color: #4270f4;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.pagination .page-item.active .page-link,
+.pagination .page-item .page-link:hover {
+  background: #4270f4;
+  color: #fff;
+}
+
+/* From Uiverse.io by boryanakrasteva */ 
+/* Customize the label (the checkbox-btn) */
+.checkbox-btn {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-btn input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-btn label {
+  cursor: pointer;
+  font-size: 14px;
+}
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border: 2.5px solid #4271f4a2;
+  transition: .2s linear;
+}
+.checkbox-btn input:checked ~ .checkmark {
+  background-color: transparent;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  left: 50%;
+  top: 40%;
+  width: 10px;
+  height: 14px;
+  border: 2px solid #4270f4;
+  filter: drop-shadow(0px 0px 10px #4270f4);
+  border-width: 0 2.5px 2.5px 0;
+  transition: .2s linear;
+  transform: translate(-50%, -50%) rotate(-90deg) scale(0.2);
+}
+
+/* Show the checkmark when checked */
+.checkbox-btn input:checked ~ .checkmark:after {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  animation: pulse 1s ease-in;
+}
+
+.checkbox-btn input:checked ~ .checkmark {
+  transform: rotate(45deg);
+  border: none;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1.6);
+  }
+}
