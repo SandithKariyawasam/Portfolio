@@ -1,55 +1,59 @@
-import React, { useEffect } from "react";
-import '../dashboard/assets/css/dashboard.css'
-import logo from '../assets/images/logo.png'
-
-import { Link, useLocation } from "react-router-dom";
+import React, { useContext } from "react";
+import "../dashboard/assets/css/dashboard.css";
+import logo from "../assets/images/logo.png";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 const sidenavbar = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
+    const { logout } = useContext(AuthContext); // 👈 get logout from context
 
     const isActive = (path) => (location.pathname === path ? "active" : "");
 
     const handleLogout = () => {
-        localStorage.removeItem("token");
+        logout(); // removes token + updates state
+        navigate("/login"); // redirect to login
     };
 
     return (
         <>
-            <div class="sidebar">
-                <div class="logo">
+            <div className="sidebar">
+                <div className="logo">
                     <img src={logo} />
                 </div>
 
-                <div class="nav-menu">
-                    <button class={`nav-item ${isActive("/dashboard")}`}>
-                        <i class="fas fa-chart-line"></i>
+                <div className="nav-menu">
+                    <button className={`nav-item ${isActive("/dashboard")}`}>
+                        <i className="fas fa-chart-line"></i>
                         <span><Link to="/dashboard">Overview</Link></span>
                     </button>
-                    <button class={`nav-item ${isActive("/")}`}>
-                        <i class="fas fa-home"></i>
+                    <button className={`nav-item ${isActive("/")}`}>
+                        <i className="fas fa-home"></i>
                         <span><Link to="/">Home</Link></span>
                     </button>
-                    <button class={`nav-item ${isActive("/dashboard/account")} && nav-item ${isActive("/dashboard/profile")}`}>
-                        <i class="fas fa-user-circle"></i>
+                    <button className={`nav-item ${isActive("/dashboard/account")} && nav-item ${isActive("/dashboard/profile")}`}>
+                        <i className="fas fa-user-circle"></i>
                         <span><Link to="/dashboard/account">Account</Link></span>
                     </button>
-                    <button class={`nav-item ${isActive("/dashboard/projects")}`}>
-                        <i class="fas fa-wallet"></i>
+                    <button className={`nav-item ${isActive("/dashboard/projects")}`}>
+                        <i className="fas fa-wallet"></i>
                         <span><Link to="/dashboard/projects">Projects</Link></span>
                     </button>
-                    <button class={`nav-item ${isActive("/dashboard/blogs")}`}>
-                        <i class="fas fa-sliders-h"></i>
+                    <button className={`nav-item ${isActive("/dashboard/blogs")}`}>
+                        <i className="fas fa-sliders-h"></i>
                         <span><Link to="/dashboard/blogs">Blogs</Link></span>
                     </button>
-                    <button class={`nav-item ${isActive("/dashboard/inbox")}`}>
-                        <i class="fas fa-comment-dots"></i>
+                    <button className={`nav-item ${isActive("/dashboard/inbox")}`}>
+                        <i className="fas fa-comment-dots"></i>
                         <span><Link to="/dashboard/inbox">Inbox</Link></span>
                     </button>
-                    <button class={`nav-item ${isActive("/dashboard/customize")}`}>
-                        <i class="fas fa-life-ring"></i>
+                    <button className={`nav-item ${isActive("/dashboard/customize")}`}>
+                        <i className="fas fa-life-ring"></i>
                         <span><Link to="/dashboard/customize">Customize</Link></span>
                     </button>
-                    <button class={`nav-item ${isActive("/dashboard/live")}`}>
-                        <i class="fa-solid fa-eye"></i>
+                    <button className={`nav-item ${isActive("/dashboard/live")}`}>
+                        <i className="fa-solid fa-eye"></i>
                         <span><Link to="/dashboard/live">Live View</Link></span>
                     </button>
                     <button onClick={handleLogout} className="nav-item">

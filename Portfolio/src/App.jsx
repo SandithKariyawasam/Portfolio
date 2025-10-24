@@ -21,6 +21,7 @@ import PrivateRoute from "./component/PrivateRoute";
 import Dashboard from "./dashboard/dashboard"
 
 import { Routes, Route, useLocation } from "react-router-dom";
+import { AuthContext, AuthProvider } from "./context/AuthContext";
 
 function App() {
   const location = useLocation();
@@ -38,24 +39,26 @@ function App() {
 
   return (
     <>
-      {!hideHeader && <Header />}
-      <main className="main-homepage">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/credentials" element={<Credentials />} />
-          <Route path="/works" element={<Works />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/service" element={<Service />} />
-          <Route path="/work-details" element={<Workdetails />} />
-          <Route path="/blog-details" element={<Blogdetails />} />
+      <AuthProvider>
+        {!hideHeader && <Header />}
+        <main className="main-homepage">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/credentials" element={<Credentials />} />
+            <Route path="/works" element={<Works />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/service" element={<Service />} />
+            <Route path="/work-details" element={<Workdetails />} />
+            <Route path="/blog-details" element={<Blogdetails />} />
 
-          <Route path="/dashboard/*" element={<PrivateRoute> <Dashboard /> </PrivateRoute>} />
-        </Routes>
-      </main>
-      {!hideFooter && <Footer />}
+            <Route path="/dashboard/*" element={<PrivateRoute> <Dashboard /> </PrivateRoute>} />
+          </Routes>
+        </main>
+        {!hideFooter && <Footer />}
+      </AuthProvider>
     </>
   );
 }

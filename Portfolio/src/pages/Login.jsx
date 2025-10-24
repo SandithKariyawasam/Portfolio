@@ -1,56 +1,50 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 import "../assets/css/form.css";
 import "../assets/css/bootstrap.min.css";
 import "../assets/css/aos.css";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [message, setMessage] = useState("");
-    const [error, setError] = useState("");
+  const { login } = useContext(AuthContext); // 👈 use AuthContext
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setMessage("");
+    setError("");
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setMessage("");
-        setError("");
+    try {
+      const response = await fetch("http://localhost:8070/admins/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
-        try {
-            // const response = await fetch("http://localhost:8070/admins/login", {
-            //     method: "POST",
-            //     headers: { "Content-Type": "application/json" },
-            //     body: JSON.stringify({ email, password }),
-            // });
+      const data = await response.json();
 
-            const response = await fetch("http://localhost:8070/admins/login", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password }),
-            });
+      if (!response.ok) {
+        setError(data.error || "Login failed");
+      } else {
+        setMessage("✅ Login successful!");
+        console.log("Admin:", data.admin);
 
+        // Use AuthContext login function
+        login(data.token);
 
-            const data = await response.json();
-
-            if (!response.ok) {
-                setError(data.error || "Login failed");
-            } else {
-                setMessage("✅ Login successful!");
-                console.log("Admin:", data.admin);
-
-                // Save token to localStorage
-                localStorage.setItem("token", data.token);
-
-                // Redirect to dashboard
-                navigate("/dashboard");
-            }
-        } catch (err) {
-            setError("Something went wrong. Try again.");
-            console.error("Login error:", err);
-        }
-    };
+        // Redirect to dashboard
+        navigate("/dashboard");
+      }
+    } catch (err) {
+      setError("Something went wrong. Try again.");
+      console.error("Login error:", err);
+    }
+  };
     return (
         <>
             <div className="page-container">

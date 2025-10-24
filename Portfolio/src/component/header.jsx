@@ -1,5 +1,6 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext, AuthProvider } from "../context/AuthContext.jsx";
 import "../assets/css/style.css";
 import "../assets/css/bootstrap.min.css";
 import "../assets/css/aos.css";
@@ -7,6 +8,8 @@ import logo from "../assets/images/signature.png";
 
 const Header = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { isLoggedIn } = useContext(AuthContext);
 
   const isActive = (path) => (location.pathname === path ? "active" : "");
 
@@ -14,10 +17,16 @@ const Header = () => {
     <div className="header-area">
       <div className="container">
         <div className="gx-row d-flex align-items-center justify-content-between">
+          {/* Logo */}
           <Link to="/" className="logo">
-            <img src={logo} style={{ top: "50%", transform: "translateY(20%)" }} alt="Logo" />
+            <img
+              src={logo}
+              style={{ top: "50%", transform: "translateY(20%)" }}
+              alt="Logo"
+            />
           </Link>
 
+          {/* Navbar */}
           <nav className="navbar">
             <ul className="menu">
               <li className={isActive("/")}>
@@ -33,18 +42,20 @@ const Header = () => {
                 <Link to="/contact">Contact</Link>
               </li>
             </ul>
+          </nav>
+
+          {/* Conditional Buttons */}
+          {isLoggedIn ? (
+            <Link to="/dashboard" className="theme-btn">
+              Dashboard
+            </Link>
+          ) : (
             <Link to="/login" className="theme-btn">
               Login
             </Link>
-          </nav>
+          )}
 
-          <Link to="/login" className="theme-btn">
-            Login
-          </Link>
-          <Link to="/dashboard" className="theme-btn">
-            Dashboard
-          </Link>
-
+          {/* Mobile Menu Icon */}
           <div className="show-menu">
             <span></span>
             <span></span>
