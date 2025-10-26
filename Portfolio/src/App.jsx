@@ -4,6 +4,8 @@ import "../src/assets/css/aos.css";
 import "../src/assets/css/style.css";
 
 import ThreeBackground from "./component/background/ThreeBackground";
+import Preloader from "./component/Preloader";
+import { useEffect, useState } from "react";
 
 import Home from "./pages/home";
 import About from "./pages/about";
@@ -28,6 +30,22 @@ import { AuthContext, AuthProvider } from "./context/AuthContext";
 function App() {
   const location = useLocation();
 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Fake delay — simulate data fetching or app initialization
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // useEffect(() => {
+  //   fetch("http://localhost:8070//api/data")
+  //     .then((res) => res.json())
+  //     .then(() => setLoading(false));
+  // }, []);
+
   // hide footer on login + any dashboard route
   const hideFooter =
     location.pathname === "/login" || location.pathname.startsWith("/dashboard");
@@ -41,27 +59,27 @@ function App() {
 
   return (
     <>
-      <ThreeBackground />
-      <AuthProvider>
-        {!hideHeader && <Header />}
-        <main className="main-homepage">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/credentials" element={<Credentials />} />
-            <Route path="/works" element={<Works />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/service" element={<Service />} />
-            <Route path="/work-details" element={<Workdetails />} />
-            <Route path="/blog-details" element={<Blogdetails />} />
+      {loading ? <Preloader /> :
+        <><ThreeBackground /><AuthProvider>
+          {!hideHeader && <Header />}
+          <main className="main-homepage">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              {loading ? <Preloader /> : <Route path="/about" element={<About />} />}
+              {loading ? <Preloader /> : <Route path="/credentials" element={<Credentials />} />}
+              {loading ? <Preloader /> : <Route path="/works" element={<Works />} />}
+              {loading ? <Preloader /> : <Route path="/blog" element={<Blog />} />}
+              {loading ? <Preloader /> : <Route path="/login" element={<Login />} />}
+              {loading ? <Preloader /> : <Route path="/contact" element={<Contact />} />}
+              {loading ? <Preloader /> : <Route path="/service" element={<Service />} />}
+              {loading ? <Preloader /> : <Route path="/work-details" element={<Workdetails />} />}
+              {loading ? <Preloader /> : <Route path="/blog-details" element={<Blogdetails />} />}
 
-            <Route path="/dashboard/*" element={<PrivateRoute> <Dashboard /> </PrivateRoute>} />
-          </Routes>
-        </main>
-        {!hideFooter && <Footer />}
-      </AuthProvider>
+              <Route path="/dashboard/*" element={<PrivateRoute> <Dashboard /> </PrivateRoute>} />
+            </Routes>
+          </main>
+          {!hideFooter && <Footer />}
+        </AuthProvider></>}
     </>
   );
 }
