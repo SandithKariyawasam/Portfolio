@@ -3,6 +3,8 @@ import "../src/assets/css/bootstrap.min.css";
 import "../src/assets/css/aos.css";
 import "../src/assets/css/style.css";
 
+import ThreeBackground from "./component/ThreeBackground";
+
 import Home from "./pages/home";
 import About from "./pages/about";
 import Credentials from "./pages/credentials";
@@ -39,6 +41,7 @@ function App() {
 
   return (
     <>
+      <ThreeBackground />
       <AuthProvider>
         {!hideHeader && <Header />}
         <main className="main-homepage">
