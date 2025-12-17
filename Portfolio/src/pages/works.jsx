@@ -39,7 +39,7 @@ const Works = () => {
         {/* Dynamic Grid */}
         <div className="row">
           {projects.length === 0 ? (
-            <div class="loader"></div>
+            <div></div>
           ) : (
             projects.map((project, index) => (
               <div className="col-md-6" key={project.id} data-aos="zoom-in">

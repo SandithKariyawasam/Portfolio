@@ -5,7 +5,7 @@ const Preloader = () => {
     return (
         <>
             <div class="loader-wrapper">
-                <div class="loader">
+                <div class="loaders">
                     <div class="loader-square"></div>
                     <div class="loader-square"></div>
                     <div class="loader-square"></div>

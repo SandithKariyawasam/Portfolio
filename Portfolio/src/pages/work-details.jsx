@@ -41,7 +41,7 @@ const WorkDetails = () => {
   if (!project) {
     return (
       <div className="container" style={{ padding: "100px", textAlign: "center", color: "white" }}>
-        <div class="loader"></div>
+        <div></div>
       </div>
     );
   }
