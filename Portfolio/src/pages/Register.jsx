@@ -1,28 +1,30 @@
-import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom"; 
 import "../assets/css/form.css";
 import "../assets/css/bootstrap.min.css";
 import "../assets/css/aos.css";
 
-import { AuthContext } from "../context/AuthContext";
-
-const Login = () => {
+const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
-
-  const { login } = useContext(AuthContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
     setError("");
 
+    if (password !== confirmPassword) {
+        setError("Passwords do not match!");
+        return;
+    }
+
     try {
-      const response = await fetch("http://localhost:3000/admins/login", {
+      const response = await fetch("http://localhost:3000/admins/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -31,20 +33,17 @@ const Login = () => {
       const data = await response.json();
 
       if (!response.ok) {
-        setError(data.error || "Login failed");
+        setError(data.error || "Registration failed");
       } else {
-        setMessage("✅ Login successful!");
-        console.log("Admin:", data.admin);
-
-        login(data.token, data.admin);
-
+        setMessage("✅ Registration successful! Redirecting...");
+        
         setTimeout(() => {
-          navigate("/dashboard");
-        }, 1000);
+            navigate("/login"); 
+        }, 2000);
       }
     } catch (err) {
       setError("Something went wrong. Try again.");
-      console.error("Login error:", err);
+      console.error("Registration error:", err);
     }
   };
 
@@ -52,14 +51,13 @@ const Login = () => {
     <>
       <div className="page-container">
         <form className="form" onSubmit={handleSubmit}>
-          <p className="title">Login</p>
-          <p className="message">SignIn now and get full access to our web.</p>
+          <p className="title">Register</p>
+          <p className="message">Create a new admin account.</p>
 
           <label>
             <input
               className="input"
               type="email"
-              id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -71,7 +69,6 @@ const Login = () => {
             <input
               className="input"
               type="password"
-              id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -80,16 +77,27 @@ const Login = () => {
           </label>
 
           <label>
+            <input
+              className="input"
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+            <span>Confirm Password</span>
+          </label>
+
+          <label>
             {error && <p style={{ color: "red", fontSize: "0.9rem" }}>{error}</p>}
             {message && <p style={{ color: "green", fontSize: "0.9rem" }}>{message}</p>}
           </label>
 
           <button type="submit" className="submit">
-            SignIn
+            Register
           </button>
-          <br />
+          
           <p className="signin">
-            Only admin can login here. Still users are not allowed to login.
+            Already have an account? <Link to="/login">Login here</Link>
           </p>
         </form>
       </div>
@@ -97,4 +105,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

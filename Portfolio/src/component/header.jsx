@@ -9,7 +9,7 @@ import logo from "../assets/images/signature.png";
 const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { isLoggedIn } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   const isActive = (path) => (location.pathname === path ? "active" : "");
 
@@ -45,7 +45,7 @@ const Header = () => {
           </nav>
 
           {/* Conditional Buttons */}
-          {isLoggedIn ? (
+          {user ? (
             <Link to="/dashboard" className="theme-btn">
               Dashboard
             </Link>

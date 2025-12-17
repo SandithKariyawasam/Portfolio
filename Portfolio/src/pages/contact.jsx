@@ -33,17 +33,11 @@ const Contact = () => {
     setStatus({ type: "loading", message: "Sending..." });
 
     try {
-      const res = await fetch("http://localhost:8070/api/send-email", {
+      const res = await fetch("https://portfolio-backend-tau-rouge.vercel.app/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
-      // const res = await fetch("sandithportfolio-dpedfrchhheyhscc.centralindia-01.azurewebsites.net/api/send-email", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(formData),
-      // });
 
       const data = await res.json();
       if (data.success) {
@@ -195,8 +189,8 @@ const Contact = () => {
                         status.type === "success"
                           ? "green"
                           : status.type === "error"
-                          ? "red"
-                          : "white",
+                            ? "red"
+                            : "white",
                     }}
                   >
                     {status.message}

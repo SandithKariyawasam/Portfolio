@@ -17,6 +17,8 @@ import Service from "./pages/service";
 import Workdetails from "./pages/work-details";
 import Blogdetails from "./pages/blog-details";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
+
 import Header from "./component/header";
 import Footer from "./component/footer";
 
@@ -70,9 +72,10 @@ function App() {
               {loading ? <Preloader /> : <Route path="/works" element={<Works />} />}
               {loading ? <Preloader /> : <Route path="/blog" element={<Blog />} />}
               {loading ? <Preloader /> : <Route path="/login" element={<Login />} />}
+              {loading ? <Preloader /> : <Route path="/abcdefghijklmn" element={<Register />} />}
               {loading ? <Preloader /> : <Route path="/contact" element={<Contact />} />}
               {loading ? <Preloader /> : <Route path="/service" element={<Service />} />}
-              {loading ? <Preloader /> : <Route path="/work-details" element={<Workdetails />} />}
+              {loading ? <Preloader /> : <Route path="/work-details/:id" element={<Workdetails />} />}
               {loading ? <Preloader /> : <Route path="/blog-details" element={<Blogdetails />} />}
 
               <Route path="/dashboard/*" element={<PrivateRoute> <Dashboard /> </PrivateRoute>} />
