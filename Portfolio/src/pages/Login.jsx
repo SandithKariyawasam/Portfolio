@@ -22,7 +22,7 @@ const Login = () => {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:3000/admins/login", {
+      const response = await fetch("https://portfolio-backend-tau-rouge.vercel.app/admins/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
