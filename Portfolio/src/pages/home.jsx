@@ -37,9 +37,9 @@ const Home = () => {
                 <img src={me} alt="About Me" />
               </div>
               <div className="infos">
-                <h4>A SOFTWARE ENGINEER</h4>
+                <h4>A DEVOPS ENGINEER</h4>
                 <h1>Sandith Kariyawasam.</h1>
-                <p>I am a Software Engineer based in Sri Lanka.</p>
+                <p>I am a DevOps Engineer based in Sri Lanka.</p>
                 <Link to="/about" className="about-btn">
                   <img src={icon} alt="Button" />
                 </Link>
@@ -139,7 +139,7 @@ const Home = () => {
                   <div className="d-flex align-items-center justify-content-between">
                     <div className="infos">
                       <h4>specialization</h4>
-                      <h1>Services Offering</h1>
+                      <h1>Services</h1>
                     </div>
                     <Link to="/service" className="about-btn">
                       <img src={icon} alt="Button" />
@@ -186,14 +186,14 @@ const Home = () => {
               <img src={bg1} alt="BG" className="bg-img" />
               <div className="clients d-flex align-items-start gap-24 justify-content-center">
                 <div className="client-item">
-                  <h1>02</h1>
+                  <h1>01</h1>
                   <p>
                     Years <br />
                     Experience
                   </p>
                 </div>
                 <div className="client-item">
-                  <h1>+5</h1>
+                  <h1>+1</h1>
                   <p>
                     CLIENTS <br />
                     WORLDWIDE

@@ -39,10 +39,7 @@ const About = () => {
               <img src={icon2} alt="Icon" />
               <h1>Sandith Kariyawasam</h1>
               <p>
-                I am a Sri Lankan-based software engineer with a focus on web
-                design, mobile app development, and UI/UX design. I have a
-                diverse range of experience having worked across various fields
-                and industries.
+                I am a Software Engineer and DevOps practitioner based in Sri Lanka, focused on optimizing the path from code to production. While my core expertise encompasses web, mobile, and UI/UX design, I specialize in streamlining workflows through DevOps methodologies. I leverage my diverse experience across various fields to build robust infrastructure that supports seamless, high-quality user experiences.
               </p>
             </div>
           </div>
@@ -61,9 +58,9 @@ const About = () => {
                   <p className="type">Freelancer</p>
                 </li>
                 <li>
-                  <p className="date">2023 - Present</p>
+                  <p className="date">2024 - Present</p>
                   <h2>Front-End Developer</h2>
-                  <p className="type">Bravoscript</p>
+                  <p className="type">Team DynamoSolutions</p>
                 </li>
               </ul>
             </div>

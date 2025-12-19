@@ -62,25 +62,10 @@ const Credentials = () => {
               <div className="credential-about" data-aos="zoom-in">
                 <h2>About Me</h2>
                 <p>
-                  I'm Sandith, a passionate and detail-oriented web developer
-                  focused on building modern, responsive, and user-friendly web
-                  applications. With a strong foundation in front-end
-                  technologies and growing experience in tools like Flutter, I
-                  enjoy crafting seamless digital experiences that not only look
-                  great but also perform well. I have a natural curiosity for
-                  learning and enjoy diving into new frameworks, design systems,
-                  and development practices to continuously improve my skills.
+                  I’m Sandith, a passionate and detail-oriented Software Engineer bridging the gap between modern application development and efficient operations. With a strong foundation in front-end technologies and Flutter, I don't just build user-friendly interfaces; I integrate DevOps practices to ensure those digital experiences are scalable, automated, and high-performing.
                 </p>
                 <p>
-                  Beyond coding, I’m driven by a desire to solve real-world
-                  problems through technology. Whether working independently or
-                  as part of a team, I bring a proactive mindset and a
-                  commitment to delivering high-quality solutions. I value
-                  clean, maintainable code and take pride in building
-                  applications that are both functional and intuitive. As I grow
-                  in the tech industry, I aim to contribute to impactful
-                  projects and stay on the cutting edge of web development
-                  trends.
+                  I have a natural curiosity for the entire software lifecycle, constantly diving into new frameworks, infrastructure tools, and CI/CD workflows to improve how software is delivered. Beyond coding, I’m driven to solve real-world problems through technology. Whether working independently or as part of a team, I prioritize clean, maintainable code and reliable deployment strategies. As I grow in the tech industry, I aim to contribute to impactful projects that sit at the cutting edge of software engineering and DevOps excellence.
                 </p>
               </div>
 
@@ -100,11 +85,11 @@ const Credentials = () => {
                   </p>
                 </div>
                 <div className="credential-edc-exp-item" data-aos="zoom-in">
-                  <h4>2023 - Present</h4>
+                  <h4>2024 - Present</h4>
                   <h3>Front-End Developer</h3>
-                  <h5>Bravoscript</h5>
+                  <h5>Team DYNAMOSOLUTIONS</h5>
                   <p>
-                    As a front-end developer at Bravoscript, I specialize in
+                    As a front-end developer at DYNAMOSOLUTIONS, I specialize in
                     creating dynamic and user-friendly interfaces. I work
                     closely with design and back-end teams to build responsive,
                     efficient, and visually appealing web applications. My role
@@ -152,32 +137,50 @@ const Credentials = () => {
                   <div className="skill-item" data-aos="zoom-in">
                     <span className="percent">90%</span>
                     <h3 className="name">JavaScript</h3>
-                    <p>Non enim praesent</p>
                   </div>
                   <div className="skill-item" data-aos="zoom-in">
-                    <span className="percent">78%</span>
+                    <span className="percent">70%</span>
                     <h3 className="name">C#</h3>
-                    <p>Non enim praesent</p>
                   </div>
                   <div className="skill-item" data-aos="zoom-in">
                     <span className="percent">92%</span>
                     <h3 className="name">Figma</h3>
-                    <p>Non enim praesent</p>
                   </div>
                   <div className="skill-item" data-aos="zoom-in">
                     <span className="percent">75%</span>
                     <h3 className="name">Java</h3>
-                    <p>Non enim praesent</p>
                   </div>
                   <div className="skill-item" data-aos="zoom-in">
                     <span className="percent">95%</span>
                     <h3 className="name">React</h3>
-                    <p>Non enim praesent</p>
                   </div>
                   <div className="skill-item" data-aos="zoom-in">
-                    <span className="percent">60%</span>
+                    <span className="percent">90%</span>
                     <h3 className="name">Node Js</h3>
-                    <p>Non enim praesent</p>
+                  </div>
+                  <div className="skill-item" data-aos="zoom-in">
+                    <span className="percent">80%</span>
+                    <h3 className="name">Docker</h3>
+                  </div>
+                  <div className="skill-item" data-aos="zoom-in">
+                    <span className="percent">70%</span>
+                    <h3 className="name">Kubernetes</h3>
+                  </div>
+                  <div className="skill-item" data-aos="zoom-in">
+                    <span className="percent">90%</span>
+                    <h3 className="name">Jenkins</h3>
+                  </div>
+                  <div className="skill-item" data-aos="zoom-in">
+                    <span className="percent">90%</span>
+                    <h3 className="name">Bash/Shell Scripting</h3>
+                  </div>
+                  <div className="skill-item" data-aos="zoom-in">
+                    <span className="percent">70%</span>
+                    <h3 className="name"> Grafana</h3>
+                  </div>
+                  <div className="skill-item" data-aos="zoom-in">
+                    <span className="percent">70%</span>
+                    <h3 className="name"> Prometheus</h3>
                   </div>
                 </div>
               </div>
