@@ -54,13 +54,13 @@ const Home = () => {
                   <div className="marquee">
                     <div>
                       <span>
-                        <img src={star} alt="Star" /> I’m currently working on{" "}
-                        <b>Mobile app</b> & <b>chat web app</b>{" "}
+                        <img src={star} alt="Star" /> I’m currently Learning {" "}
+                        <b>Kubernetes</b> & <b>Terraform</b>{" "}
                         <img src={star} alt="Star" />
-                        I’m currently working on <b>Mobile app</b> &{" "}
-                        <b>chat web app</b> <img src={star} alt="Star" />
-                        I’m currently working on <b>Mobile app</b> &{" "}
-                        <b>chat web app</b>
+                        I’m currently Learning <b>Kubernetes</b> &{" "}
+                        <b>Terraform</b> <img src={star} alt="Star" />
+                        I’m currently Learning <b>Kubernetes</b> &{" "}
+                        <b>Terraform</b>
                       </span>
                     </div>
                   </div>
@@ -152,16 +152,16 @@ const Home = () => {
                 <div className="about-profile-box info-box shadow-box h-full">
                   <img src={bg1} alt="BG" className="bg-img" />
                   <div className="inner-profile-icons shadow-box">
-                    <a href="#">
+                    <a href="https://www.linkedin.com/in/sandith-kariyawasam-352069255/">
                       <i className="iconoir-linkedin"></i>
                     </a>
-                    <a href="#">
+                    <a href="https://www.facebook.com/sandith.kariyawasam.2025">
                       <i className="iconoir-facebook"></i>
                     </a>
-                    <a href="#">
+                    <a href="https://www.instagram.com/sandith.kariyawasam/">
                       <i className="iconoir-instagram"></i>
                     </a>
-                    <a href="#">
+                    <a href="https://github.com/SandithKariyawasam">
                       <i className="iconoir-github"></i>
                     </a>
                   </div>

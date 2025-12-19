@@ -42,7 +42,7 @@ const Works = () => {
             <div></div>
           ) : (
             projects.map((project, index) => (
-              <div className="col-md-6" key={project.id} data-aos="zoom-in">
+              <div className="col-md-4" key={project.id} data-aos="zoom-in">
                 <div className="project-item shadow-box">
 
                   <Link to={`/work-details/${project.id}`} className="overlay-link"></Link>

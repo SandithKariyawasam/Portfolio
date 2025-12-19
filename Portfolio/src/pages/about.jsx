@@ -99,28 +99,28 @@ const About = () => {
                   <img src={bg1} alt="Background design" className="bg-img" />
                   <div className="inner-profile-icons shadow-box">
                     <a
-                      href="https://www.linkedin.com"
+                      href="https://www.linkedin.com/in/sandith-kariyawasam-352069255/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <i className="iconoir-linkedin"></i>
                     </a>
                     <a
-                      href="https://www.facebook.com"
+                      href="https://www.facebook.com/sandith.kariyawasam.2025"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <i className="iconoir-facebook"></i>
                     </a>
                     <a
-                      href="https://www.instagram.com"
+                      href="https://www.instagram.com/sandith.kariyawasam/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <i className="iconoir-instagram"></i>
                     </a>
                     <a
-                      href="https://www.github.com"
+                      href="https://github.com/SandithKariyawasam"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

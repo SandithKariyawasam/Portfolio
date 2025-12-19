@@ -100,17 +100,17 @@ const Contact = () => {
                 data-aos="zoom-in"
               >
                 <li>
-                  <Link className="shadow-box" to="#">
+                  <Link className="shadow-box" to="https://www.linkedin.com/in/sandith-kariyawasam-352069255/">
                     <i className="iconoir-linkedin"></i>
                   </Link>
                 </li>
                 <li>
-                  <Link className="shadow-box" to="#">
+                  <Link className="shadow-box" to="https://www.facebook.com/sandith.kariyawasam.2025">
                     <i className="iconoir-facebook"></i>
                   </Link>
                 </li>
                 <li>
-                  <Link className="shadow-box" to="#">
+                  <Link className="shadow-box" to="https://www.instagram.com/sandith.kariyawasam/">
                     <i className="iconoir-instagram"></i>
                   </Link>
                 </li>

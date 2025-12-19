@@ -21,7 +21,7 @@ const Header = () => {
           <Link to="/" className="logo">
             <img
               src={logo}
-              style={{ top: "50%", transform: "translateY(20%)" }}
+              style={{ marginLeft: "-35px", transform: "translateY(30%)", width: "250px" }}
               alt="Logo"
             />
           </Link>
