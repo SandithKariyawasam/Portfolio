@@ -30,28 +30,28 @@ const Credentials = () => {
 
                   <ul className="social-links d-flex justify-content-center">
                     <li>
-                      <Link to="#">
+                      <Link to="https://www.linkedin.com/in/sandith-kariyawasam-352069255/">
                         <i className="iconoir-linkedin"></i>
                       </Link>
                     </li>
                     <li>
-                      <Link to="#">
-                        <i className="iconoir-tiktok"></i>
+                      <Link to="https://github.com/SandithKariyawasam">
+                        <i className="iconoir-github"></i>
                       </Link>
                     </li>
                     <li>
-                      <Link to="#">
+                      <Link to="https://www.instagram.com/sandith.kariyawasam/">
                         <i className="iconoir-instagram"></i>
                       </Link>
                     </li>
                     <li>
-                      <Link to="#">
+                      <Link to="https://www.facebook.com/sandith.kariyawasam.2025">
                         <i className="iconoir-facebook-tag"></i>
                       </Link>
                     </li>
                   </ul>
 
-                  <Link to="./contact" className="theme-btn">
+                  <Link to="/contact" className="theme-btn">
                     Contact Me
                   </Link>
                 </div>
