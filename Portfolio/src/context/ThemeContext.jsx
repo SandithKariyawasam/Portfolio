@@ -13,6 +13,7 @@ export const ThemeProvider = ({ children }) => {
       textColor: '#9f9f9f',
       cardBgColor: '#0F0F0F',
       iconColor: '#ffffff',
+      cursorColor: '#5B78F6',
       aboutText: 'I am a Software Engineer and DevOps practitioner based in Sri Lanka, focused on optimizing the path from code to production. While my core expertise encompasses web, mobile, and UI/UX design, I specialize in streamlining workflows through DevOps methodologies. I leverage my diverse experience across various fields to build robust infrastructure that supports seamless, high-quality user experiences.',
       credentialsText1: "I’m Sandith, a passionate and detail-oriented Software Engineer bridging the gap between modern application development and efficient operations. With a strong foundation in front-end technologies and Flutter, I don't just build user-friendly interfaces; I integrate DevOps practices to ensure those digital experiences are scalable, automated, and high-performing.",
       credentialsText2: "I have a natural curiosity for the entire software lifecycle, constantly diving into new frameworks, infrastructure tools, and CI/CD workflows to improve how software is delivered. Beyond coding, I’m driven to solve real-world problems through technology. Whether working independently or as part of a team, I prioritize clean, maintainable code and reliable deployment strategies. As I grow in the tech industry, I aim to contribute to impactful projects that sit at the cutting edge of software engineering and DevOps excellence.",
@@ -70,6 +71,7 @@ export const ThemeProvider = ({ children }) => {
     root.style.setProperty('--text-color', theme.textColor);
     root.style.setProperty('--card-bg', theme.cardBgColor);
     root.style.setProperty('--icon-color', theme.iconColor);
+    root.style.setProperty('--cursor-color', theme.cursorColor || '#5B78F6');
 
     localStorage.setItem('site_theme', JSON.stringify(theme));
   }, [theme]);
@@ -88,6 +90,7 @@ export const ThemeProvider = ({ children }) => {
       textColor: '#9f9f9f',
       cardBgColor: '#0F0F0F',
       iconColor: '#ffffff',
+      cursorColor: '#5B78F6',
       aboutText: 'I am a Software Engineer and DevOps practitioner based in Sri Lanka, focused on optimizing the path from code to production. While my core expertise encompasses web, mobile, and UI/UX design, I specialize in streamlining workflows through DevOps methodologies. I leverage my diverse experience across various fields to build robust infrastructure that supports seamless, high-quality user experiences.',
       credentialsText1: "I’m Sandith, a passionate and detail-oriented Software Engineer bridging the gap between modern application development and efficient operations. With a strong foundation in front-end technologies and Flutter, I don't just build user-friendly interfaces; I integrate DevOps practices to ensure those digital experiences are scalable, automated, and high-performing.",
       credentialsText2: "I have a natural curiosity for the entire software lifecycle, constantly diving into new frameworks, infrastructure tools, and CI/CD workflows to improve how software is delivered. Beyond coding, I’m driven to solve real-world problems through technology. Whether working independently or as part of a team, I prioritize clean, maintainable code and reliable deployment strategies. As I grow in the tech industry, I aim to contribute to impactful projects that sit at the cutting edge of software engineering and DevOps excellence.",

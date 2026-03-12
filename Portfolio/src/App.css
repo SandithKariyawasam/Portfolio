@@ -1,5 +1,10 @@
 
 
+/* Hide default cursor on public site — custom cursor handles it */
+body, a, button, input, select, textarea, [role="button"] {
+  cursor: none !important;
+}
+
 /* # Margin */
 .mt-24 {
   margin-top: 24px;

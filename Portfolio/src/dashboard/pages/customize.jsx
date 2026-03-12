@@ -131,6 +131,20 @@ const Customize = () => {
                         </div>
                     </div>
 
+                    {/* Cursor Color Picker */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                        <label style={{ fontWeight: 'bold', color: '#555' }}>Custom Cursor Color</label>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                            <input
+                                type="color"
+                                value={draft.cursorColor || '#5B78F6'}
+                                onChange={(e) => handleDraftChange('cursorColor', e.target.value)}
+                                style={{ width: '50px', height: '50px', border: 'none', borderRadius: '8px', cursor: 'pointer', padding: '0', background: 'none' }}
+                            />
+                            <span style={{ fontFamily: 'monospace', color: '#888', backgroundColor: '#f9f9f9', padding: '8px 12px', borderRadius: '6px' }}>{draft.cursorColor || '#5B78F6'}</span>
+                        </div>
+                    </div>
+
                 </div>
 
                 <h4 style={{ marginTop: '50px', marginBottom: '30px', fontSize: '20px', color: '#333', borderBottom: '1px solid #eee', paddingBottom: '15px' }}>Identity & Social</h4>

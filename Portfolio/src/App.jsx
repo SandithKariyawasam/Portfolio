@@ -4,6 +4,7 @@ import "../src/assets/css/aos.css";
 import "../src/assets/css/style.css";
 
 import ThreeBackground from "./component/background/ThreeBackground";
+import CustomCursor from "./component/cursor/CustomCursor";
 import Preloader from "./component/Preloader";
 import { useEffect, useState } from "react";
 
@@ -62,7 +63,7 @@ function App() {
   return (
     <>
       {loading ? <Preloader /> :
-        <><ThreeBackground /><AuthProvider>
+        <><ThreeBackground />{!hideHeader && <CustomCursor />}<AuthProvider>
           {!hideHeader && <Header />}
           <main className="main-homepage">
             <Routes>
