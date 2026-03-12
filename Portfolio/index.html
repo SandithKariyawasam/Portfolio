@@ -22,7 +22,18 @@
 
 <body>
 
-
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
   <!-- <script src="public/assets/js/jquery-3.6.4.js"></script>
@@ -32,7 +43,79 @@
 
   <script type="module" src="/src/dashboard/assets/vendor/js/global.min.js"></script>
 
+  <script>
 
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+
+    // Generate a gradient from base color to white across N circles
+    function hexToRgb(hex) {
+      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+      return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+      } : { r: 91, g: 120, b: 246 };
+    }
+
+    function buildColors(baseHex) {
+      const base = hexToRgb(baseHex || '#5b78f6');
+      return Array.from({ length: circles.length }, (_, i) => {
+        const t = i / (circles.length - 1);
+        const r = Math.round(base.r + (255 - base.r) * t);
+        const g = Math.round(base.g + (255 - base.g) * t);
+        const b = Math.round(base.b + (255 - base.b) * t);
+        return `rgb(${r},${g},${b})`;
+      });
+    }
+
+    function applyColors() {
+      const saved = localStorage.getItem('site_theme');
+      const theme = saved ? JSON.parse(saved) : {};
+      const colors = buildColors(theme.cursorColor || '#5b78f6');
+      circles.forEach(function (circle, index) {
+        circle.style.backgroundColor = colors[index];
+      });
+    }
+
+    circles.forEach(function (circle) {
+      circle.x = 0;
+      circle.y = 0;
+    });
+
+    applyColors();
+
+    // Re-apply colors whenever the theme is saved
+    window.addEventListener("storage", applyColors);
+
+    window.addEventListener("mousemove", function (e) {
+      coords.x = e.clientX;
+      coords.y = e.clientY;
+    });
+
+    function animateCircles() {
+      let x = coords.x;
+      let y = coords.y;
+
+      circles.forEach(function (circle, index) {
+        circle.style.left = x - 12 + "px";
+        circle.style.top = y - 12 + "px";
+
+        circle.style.scale = (circles.length - index) / circles.length;
+
+        circle.x = x;
+        circle.y = y;
+
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
+      });
+
+      requestAnimationFrame(animateCircles);
+    }
+
+    animateCircles();
+  </script>
 </body>
 
 </html>
