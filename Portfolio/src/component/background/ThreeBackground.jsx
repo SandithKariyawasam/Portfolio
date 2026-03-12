@@ -1,9 +1,11 @@
-import React, { useRef } from 'react'
+import React, { useRef, useContext } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
+import { ThemeContext } from '../../context/ThemeContext'
 
 function SpinningBox() {
   const ref = useRef()
+  const { theme } = useContext(ThemeContext);
 
   // Rotate the box every animation frame
   useFrame(() => {
@@ -14,7 +16,7 @@ function SpinningBox() {
   return (
     <mesh ref={ref} scale={1.5}>
       <boxGeometry args={[2.5, 2.5, 2.5]} />   {/* width, height, depth */}
-      <meshStandardMaterial color="#4270f4" metalness={0.0} roughness={0.3} />
+      <meshStandardMaterial color={theme.threeDColor || '#4270f4'} metalness={0.0} roughness={0.3} />
     </mesh>
   )
 }

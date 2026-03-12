@@ -192,29 +192,28 @@ const Projects = () => {
 
   return (
     <>
-      <div className="dashboard-container">
+      <div className="dashboard-container" style={{ display: 'block' }}>
 
-        {/* MAIN AREA */}
-        <div className="dashboard-main">
-          <div className="promo-card-account">
-            <h3 className="section-title">Manage Projects</h3>
-            <div className="section_form" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '40px', textAlign: 'center' }}>
-              <p style={{ marginBottom: '20px', color: '#666' }}>
+        {/* HEADER AREA */}
+        <div className="dashboard-main" style={{ marginBottom: '30px' }}>
+          <div className="promo-card-account" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '30px', backgroundColor: '#fff', borderRadius: '18px', boxShadow: '0 10px 25px rgba(0,0,0,0.05)' }}>
+            <div>
+              <h3 className="section-title" style={{ marginBottom: '10px' }}>Manage Projects</h3>
+              <p style={{ color: '#666', margin: 0 }}>
                 Upload new projects with required 6 images (Cover, Banner, 4 Gallery).
               </p>
-              <button className="button_submit" onClick={handleAddNew} style={{ maxWidth: '300px' }}>
-                + Add New Project
-              </button>
             </div>
+            <button className="button_submit" onClick={handleAddNew} style={{ width: 'auto', padding: '12px 24px', margin: 0 }}>
+              + Add New Project
+            </button>
           </div>
         </div>
 
-        {/* SIDEBAR LIST */}
-        <div className="dashboard-sidebar">
-          <div className="transaction-card">
-            <h3 className="section-title">All Projects</h3>
-
-            <div className="group">
+        {/* PROJECTS GRID AREA */}
+        <div className="transaction-card" style={{ padding: '30px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px', flexWrap: 'wrap', gap: '20px' }}>
+            <h3 className="section-title" style={{ margin: 0 }}>All Projects</h3>
+            <div className="group" style={{ width: '100%', maxWidth: '350px', margin: 0 }}>
               <svg viewBox="0 0 24 24" aria-hidden="true" className="icon">
                 <g>
                   <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
@@ -222,28 +221,30 @@ const Projects = () => {
               </svg>
               <input className="input" type="search" placeholder="Search Project" />
             </div>
+          </div>
 
-            <br />
-
-            <div className="projects-list" style={{ overflowY: 'auto', maxHeight: '500px' }}>
-              {projects.length === 0 ? (
-                <p style={{ textAlign: "center", color: "#888" }}>No projects found.</p>
-              ) : (
-                projects.map((proj) => (
-                  <div key={proj.id} className="book" onClick={() => handleEdit(proj)} style={{ cursor: 'pointer' }}>
-                    <p>{proj.coverName || proj.title}</p>
-                    <div className="cover">
-                      {/* Show uploaded cover or fallback */}
-                      <img
-                        src={proj.coverUrl || pr1}
-                        alt="cover"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                      />
-                    </div>
+          <div className="projects-grid" style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gap: '25px'
+          }}>
+            {projects.length === 0 ? (
+              <div style={{ textAlign: "center", color: "#888", gridColumn: '1 / -1', padding: '40px 0' }}>
+                <p>No projects found.</p>
+              </div>
+            ) : (
+              projects.map((proj) => (
+                <div key={proj.id} className="project-grid-card" onClick={() => handleEdit(proj)}>
+                  <div className="project-card-img">
+                    <img src={proj.coverUrl || pr1} alt="cover" />
                   </div>
-                ))
-              )}
-            </div>
+                  <div className="project-card-body">
+                    <h4 className="project-card-title">{proj.coverName || proj.title}</h4>
+                    <span className="project-card-category">{proj.service}</span>
+                  </div>
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>

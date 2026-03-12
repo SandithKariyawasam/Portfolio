@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import AOS from "aos";               
 import "aos/dist/aos.css";           
 
@@ -16,14 +16,16 @@ import myworks from "../assets/images/my-works.png";
 import gfonts from "../assets/images/gfonts.png";
 import icon2 from "../assets/images/icon2.png";
 import star from "../assets/images/star1.svg";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Home = () => {
+  const { theme } = useContext(ThemeContext);
+
   useEffect(() => {
     AOS.init({
       duration: 800,
       once: true,
     });
-    // No need to call AOS.refresh() here usually
   }, []);
   return (
     <div className="about-area">
@@ -37,9 +39,9 @@ const Home = () => {
                 <img src={me} alt="About Me" />
               </div>
               <div className="infos">
-                <h4>A DEVOPS ENGINEER</h4>
-                <h1>Sandith Kariyawasam.</h1>
-                <p>I am a DevOps Engineer based in Sri Lanka.</p>
+                <h4>{theme.role}</h4>
+                <h1>{theme.name}.</h1>
+                <p>{theme.location}</p>
                 <Link to="/about" className="about-btn">
                   <img src={icon} alt="Button" />
                 </Link>
@@ -152,16 +154,16 @@ const Home = () => {
                 <div className="about-profile-box info-box shadow-box h-full">
                   <img src={bg1} alt="BG" className="bg-img" />
                   <div className="inner-profile-icons shadow-box">
-                    <a href="https://www.linkedin.com/in/sandith-kariyawasam-352069255/">
+                    <a href={theme.socialLinkedin || "https://www.linkedin.com/in/sandith-kariyawasam-352069255/"}>
                       <i className="iconoir-linkedin"></i>
                     </a>
-                    <a href="https://www.facebook.com/sandith.kariyawasam.2025">
+                    <a href={theme.socialFacebook || "https://www.facebook.com/sandith.kariyawasam.2025"}>
                       <i className="iconoir-facebook"></i>
                     </a>
-                    <a href="https://www.instagram.com/sandith.kariyawasam/">
+                    <a href={theme.socialInstagram || "https://www.instagram.com/sandith.kariyawasam/"}>
                       <i className="iconoir-instagram"></i>
                     </a>
-                    <a href="https://github.com/SandithKariyawasam">
+                    <a href={theme.socialGithub || "https://github.com/SandithKariyawasam"}>
                       <i className="iconoir-github"></i>
                     </a>
                   </div>
@@ -186,21 +188,21 @@ const Home = () => {
               <img src={bg1} alt="BG" className="bg-img" />
               <div className="clients d-flex align-items-start gap-24 justify-content-center">
                 <div className="client-item">
-                  <h1>01</h1>
+                  <h1>{theme.statsYears}</h1>
                   <p>
                     Years <br />
                     Experience
                   </p>
                 </div>
                 <div className="client-item">
-                  <h1>+1</h1>
+                  <h1>{theme.statsClients}</h1>
                   <p>
                     CLIENTS <br />
                     WORLDWIDE
                   </p>
                 </div>
                 <div className="client-item">
-                  <h1>+12</h1>
+                  <h1>{theme.statsProjects}</h1>
                   <p>
                     Total <br />
                     Projects

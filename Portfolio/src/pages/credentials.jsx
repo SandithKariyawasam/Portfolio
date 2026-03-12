@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import bg1 from "../assets/images/bg1.png";
 import me from "../assets/images/me.png";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Credentials = () => {
+  const { theme } = useContext(ThemeContext);
+
   useEffect(() => {
     if (window.AOS) {
       window.AOS.init({
@@ -25,27 +28,27 @@ const Credentials = () => {
                   <div className="img-box">
                     <img src={me} alt="About Me" />
                   </div>
-                  <h2>Sandith Kariyawasam</h2>
-                  <p>@Sandith.kariyawasam</p>
+                  <h2>{theme.name}</h2>
+                  <p>@{theme.name.replace(/\s+/g, '.').toLowerCase()}</p>
 
                   <ul className="social-links d-flex justify-content-center">
                     <li>
-                      <Link to="https://www.linkedin.com/in/sandith-kariyawasam-352069255/">
+                      <Link to={theme.socialLinkedin || "https://www.linkedin.com/in/sandith-kariyawasam-352069255/"}>
                         <i className="iconoir-linkedin"></i>
                       </Link>
                     </li>
                     <li>
-                      <Link to="https://github.com/SandithKariyawasam">
+                      <Link to={theme.socialGithub || "https://github.com/SandithKariyawasam"}>
                         <i className="iconoir-github"></i>
                       </Link>
                     </li>
                     <li>
-                      <Link to="https://www.instagram.com/sandith.kariyawasam/">
+                      <Link to={theme.socialInstagram || "https://www.instagram.com/sandith.kariyawasam/"}>
                         <i className="iconoir-instagram"></i>
                       </Link>
                     </li>
                     <li>
-                      <Link to="https://www.facebook.com/sandith.kariyawasam.2025">
+                      <Link to={theme.socialFacebook || "https://www.facebook.com/sandith.kariyawasam.2025"}>
                         <i className="iconoir-facebook-tag"></i>
                       </Link>
                     </li>
@@ -59,130 +62,164 @@ const Credentials = () => {
             </div>
 
             <div className="credential-content flex-1">
-              <div className="credential-about" data-aos="zoom-in">
-                <h2>About Me</h2>
-                <p>
-                  I’m Sandith, a passionate and detail-oriented Software Engineer bridging the gap between modern application development and efficient operations. With a strong foundation in front-end technologies and Flutter, I don't just build user-friendly interfaces; I integrate DevOps practices to ensure those digital experiences are scalable, automated, and high-performing.
-                </p>
-                <p>
-                  I have a natural curiosity for the entire software lifecycle, constantly diving into new frameworks, infrastructure tools, and CI/CD workflows to improve how software is delivered. Beyond coding, I’m driven to solve real-world problems through technology. Whether working independently or as part of a team, I prioritize clean, maintainable code and reliable deployment strategies. As I grow in the tech industry, I aim to contribute to impactful projects that sit at the cutting edge of software engineering and DevOps excellence.
-                </p>
-              </div>
-
-              <div className="credential-edc-exp credential-experience">
-                <h2 data-aos="fade-up">Experience</h2>
-                <div className="credential-edc-exp-item" data-aos="zoom-in">
-                  <h4>2022 - Present</h4>
-                  <h3>Full stack Developer</h3>
-                  <h5>Freelancer</h5>
-                  <p>
-                    I started my freelancing career in 2022, focusing on web
-                    development. Since then, I have worked with diverse clients,
-                    helping them bring their ideas to life through custom
-                    websites and applications. My expertise spans front-end and
-                    back-end technologies, and I strive to deliver high-quality
-                    solutions tailored to my clients' needs.
-                  </p>
-                </div>
-                <div className="credential-edc-exp-item" data-aos="zoom-in">
-                  <h4>2024 - Present</h4>
-                  <h3>Front-End Developer</h3>
-                  <h5>Team DYNAMOSOLUTIONS</h5>
-                  <p>
-                    As a front-end developer at DYNAMOSOLUTIONS, I specialize in
-                    creating dynamic and user-friendly interfaces. I work
-                    closely with design and back-end teams to build responsive,
-                    efficient, and visually appealing web applications. My role
-                    involves utilizing cutting-edge technologies to ensure a
-                    seamless and engaging user experience.
-                  </p>
+              <div 
+                className="credential-about shadow-box" 
+                data-aos="zoom-in"
+                style={{
+                  backgroundColor: 'var(--card-bg)',
+                  padding: '40px',
+                  borderRadius: '24px',
+                  border: '1px solid rgba(255,255,255,0.03)',
+                  marginBottom: '40px'
+                }}
+              >
+                <h2 style={{ fontSize: '32px', marginBottom: '20px', color: 'var(--icon-color)', fontWeight: 'bold' }}>About Me</h2>
+                <div style={{ color: 'var(--text-color)', fontSize: '16px', lineHeight: '1.8' }}>
+                  <p style={{ marginBottom: '15px' }}>{theme.credentialsText1}</p>
+                  <p>{theme.credentialsText2}</p>
                 </div>
               </div>
 
-              <div className="credential-edc-exp credential-education">
-                <h2 data-aos="fade-up">Education</h2>
-                <div className="credential-edc-exp-item" data-aos="zoom-in">
-                  <h4>2020</h4>
-                  <h3>
-                    G.C.E. Advanced Level (C, C, C) - 2015 <br />
-                    (Mathematical Stream - Combined Mathematics, Physics, ICT)
-                  </h3>
-                  <h5>Sri Sumangala College, Panadura, Sri Lanka</h5>
-                  <p>
-                    I completed my G.C.E. Advanced Level in 2020, achieving
-                    grades C, C, and C in the Mathematical Stream, with a focus
-                    on Combined Mathematics, Physics, and ICT. This academic
-                    foundation has provided me with strong problem-solving
-                    skills and a solid understanding of technical subjects.
-                  </p>
-                </div>
-                <div className="credential-edc-exp-item" data-aos="zoom-in">
-                  <h4>2022 - Present</h4>
-                  <h3>BSc. (Honours) in Software Engineer</h3>
-                  <h5>NSBM Green University</h5>
-                  <p>
-                    Since 2022, I have been pursuing a BSc. (Honours) in
-                    Software Engineering at NSBM Green University. This program
-                    has equipped me with a deep understanding of software
-                    development, algorithms, and system design, enhancing my
-                    technical skills and preparing me for a successful career in
-                    the tech industry.
-                  </p>
+              <div 
+                className="shadow-box credential-experience" 
+                data-aos="zoom-in"
+                style={{
+                  backgroundColor: 'var(--card-bg)',
+                  padding: '40px',
+                  borderRadius: '24px',
+                  border: '1px solid rgba(255,255,255,0.03)',
+                  marginBottom: '40px'
+                }}
+              >
+                <h2 data-aos="fade-up" style={{ fontSize: '32px', marginBottom: '30px', color: 'var(--icon-color)', fontWeight: 'bold' }}>Experience</h2>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+                  {theme.experience.map((exp, idx) => (
+                    <div 
+                      key={exp.id} 
+                      className="credential-edc-exp-item" 
+                      data-aos="fade-up"
+                      data-aos-delay={idx * 100}
+                      style={{
+                        paddingBottom: idx !== theme.experience.length - 1 ? '30px' : '0',
+                        borderBottom: idx !== theme.experience.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none'
+                      }}
+                    >
+                      <h4 style={{ color: 'var(--primary_color)', fontSize: '16px', fontWeight: 'bold', marginBottom: '10px' }}>{exp.date}</h4>
+                      <h3 style={{ color: 'var(--icon-color)', fontSize: '22px', fontWeight: 'bold', marginBottom: '5px' }}>{exp.title}</h3>
+                      <h5 style={{ color: 'var(--text-color)', fontSize: '16px', opacity: 0.8, marginBottom: '15px' }}>{exp.company}</h5>
+                      <p style={{ color: 'var(--text-color)', fontSize: '15px', lineHeight: '1.7' }}>{exp.desc}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              <div className="skills-wrap">
-                <h2 data-aos="fade-up">Skills</h2>
-                <div className="d-grid skill-items gap-24 flex-wrap">
-                  <div className="skill-item" data-aos="zoom-in">
-                    <span className="percent">90%</span>
-                    <h3 className="name">JavaScript</h3>
-                  </div>
-                  <div className="skill-item" data-aos="zoom-in">
-                    <span className="percent">70%</span>
-                    <h3 className="name">C#</h3>
-                  </div>
-                  <div className="skill-item" data-aos="zoom-in">
-                    <span className="percent">92%</span>
-                    <h3 className="name">Figma</h3>
-                  </div>
-                  <div className="skill-item" data-aos="zoom-in">
-                    <span className="percent">75%</span>
-                    <h3 className="name">Java</h3>
-                  </div>
-                  <div className="skill-item" data-aos="zoom-in">
-                    <span className="percent">95%</span>
-                    <h3 className="name">React</h3>
-                  </div>
-                  <div className="skill-item" data-aos="zoom-in">
-                    <span className="percent">90%</span>
-                    <h3 className="name">Node Js</h3>
-                  </div>
-                  <div className="skill-item" data-aos="zoom-in">
-                    <span className="percent">80%</span>
-                    <h3 className="name">Docker</h3>
-                  </div>
-                  <div className="skill-item" data-aos="zoom-in">
-                    <span className="percent">70%</span>
-                    <h3 className="name">Kubernetes</h3>
-                  </div>
-                  <div className="skill-item" data-aos="zoom-in">
-                    <span className="percent">90%</span>
-                    <h3 className="name">Jenkins</h3>
-                  </div>
-                  <div className="skill-item" data-aos="zoom-in">
-                    <span className="percent">90%</span>
-                    <h3 className="name">Bash/Shell Scripting</h3>
-                  </div>
-                  <div className="skill-item" data-aos="zoom-in">
-                    <span className="percent">70%</span>
-                    <h3 className="name"> Grafana</h3>
-                  </div>
-                  <div className="skill-item" data-aos="zoom-in">
-                    <span className="percent">70%</span>
-                    <h3 className="name"> Prometheus</h3>
-                  </div>
+              <div 
+                className="shadow-box credential-education" 
+                data-aos="zoom-in"
+                style={{
+                  backgroundColor: 'var(--card-bg)',
+                  padding: '40px',
+                  borderRadius: '24px',
+                  border: '1px solid rgba(255,255,255,0.03)',
+                  marginBottom: '40px'
+                }}
+              >
+                <h2 data-aos="fade-up" style={{ fontSize: '32px', marginBottom: '30px', color: 'var(--icon-color)', fontWeight: 'bold' }}>Education</h2>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+                  {theme.education.map((edu, idx) => (
+                    <div 
+                      key={edu.id} 
+                      className="credential-edc-exp-item" 
+                      data-aos="fade-up"
+                      data-aos-delay={idx * 100}
+                      style={{
+                        paddingBottom: idx !== theme.education.length - 1 ? '30px' : '0',
+                        borderBottom: idx !== theme.education.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none'
+                      }}
+                    >
+                      <h4 style={{ color: 'var(--primary_color)', fontSize: '16px', fontWeight: 'bold', marginBottom: '10px' }}>{edu.date}</h4>
+                      <h3 style={{ color: 'var(--icon-color)', fontSize: '22px', fontWeight: 'bold', marginBottom: '5px' }}>{edu.degree}</h3>
+                      <h5 style={{ color: 'var(--text-color)', fontSize: '16px', opacity: 0.8, marginBottom: '15px' }}>{edu.institution}</h5>
+                      <p style={{ color: 'var(--text-color)', fontSize: '15px', lineHeight: '1.7' }}>{edu.desc}</p>
+                    </div>
+                  ))}
                 </div>
+              </div>
+
+              <div 
+                className="skills-wrap shadow-box" 
+                data-aos="zoom-in"
+                style={{
+                  backgroundColor: 'var(--card-bg)',
+                  padding: '40px',
+                  borderRadius: '24px',
+                  border: '1px solid rgba(255,255,255,0.03)'
+                }}
+              >
+                <h2 data-aos="fade-up" style={{ fontSize: '32px', marginBottom: '30px', color: 'var(--icon-color)', fontWeight: 'bold' }}>Skills</h2>
+                  <div 
+                    style={{ 
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '20px'
+                    }}
+                  >
+                    {theme.skills.map((skill, idx) => (
+                      <div 
+                        key={skill.id} 
+                        className="skill-item" 
+                        data-aos="fade-up"
+                        data-aos-delay={idx * 50}
+                        style={{
+                          backgroundColor: 'rgba(255,255,255,0.02)',
+                          borderRadius: '30px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          border: '1px solid rgba(255,255,255,0.05)',
+                          position: 'relative',
+                          overflow: 'hidden',
+                          height: '60px'
+                        }}
+                      >
+                        {/* Progress Background Fill */}
+                        <div 
+                          style={{
+                            position: 'absolute',
+                            left: 0,
+                            top: 0,
+                            height: '100%',
+                            width: skill.percent,
+                            backgroundColor: 'rgba(91, 120, 246, 0.15)', // var(--primary_color) with opacity
+                            zIndex: 1,
+                            transition: 'width 1.5s ease-out'
+                          }}
+                        ></div>
+
+                        {/* Content overlapping the fill */}
+                        <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '12px',
+                            padding: '0 30px',
+                            width: '100%',
+                            zIndex: 2,
+                            position: 'relative'
+                          }}
+                        >
+                          <span style={{ fontSize: '18px', color: 'var(--icon-color)', fontWeight: 'bold', width: '120px' }}>
+                            {skill.name}
+                          </span>
+                          <div style={{ 
+                            color: 'var(--primary_color)', 
+                            fontSize: '15px', 
+                            fontWeight: 'bold' 
+                          }}>
+                            {skill.percent}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
               </div>
             </div>
           </div>

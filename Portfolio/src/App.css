@@ -34,7 +34,7 @@ ol {
 .shadow-box {
   position: relative;
   border-radius: 30px;
-  background: #0F0F0F;
+  background: var(--card-bg);
 }
 .shadow-box::after {
   content: '';
@@ -71,7 +71,7 @@ ol {
   position: relative;
 }
 .section-heading {
-  color: #ffffff;
+  color: var(--icon-color);
   font-size: 74px;
   font-weight: 600;
   text-transform: uppercase;
@@ -133,7 +133,7 @@ ol {
   margin: auto auto 16px auto;
 }
 .info-box .infos h4 {
-  color: #BCBCBC;
+  color: var(--text-color);
   font-size: 12px;
   opacity: 0.5;
   margin-bottom: 6px;
@@ -142,7 +142,7 @@ ol {
 }
 .info-box .infos h1 {
   font-size: 20px;
-  color: #ffffff;
+  color: var(--icon-color);
   font-weight: 500;
 }
 .info-box .about-btn {
@@ -208,7 +208,7 @@ ol {
 }
 .info-box.about-services-box .icon-boxes i {
   font-size: 40px;
-  color: #ffffff;
+  color: var(--icon-color);
 }
 .info-box.about-client-box .clients .client-item {
   position: relative;
@@ -230,7 +230,7 @@ ol {
   border-radius: 30px;
 }
 .info-box.about-client-box .clients .client-item h1 {
-  color: #ffffff;
+  color: var(--icon-color);
   font-size: 34px;
   margin-bottom: 17px;
   line-height: 1.2;
@@ -238,7 +238,7 @@ ol {
 }
 .info-box.about-client-box .clients .client-item p {
   font-size: 12px;
-  color: #BCBCBC;
+  color: var(--text-color);
   opacity: 0.5;
   margin: 0;
   text-transform: uppercase;
@@ -251,7 +251,7 @@ ol {
   font-size: 44px;
   line-height: 52px;
   font-weight: 500;
-  color: #fff;
+  color: var(--icon-color);
   margin: 0;
 }
 .info-box.about-contact-box h1 span {
@@ -289,7 +289,7 @@ ol {
   padding-top: 77px;
 }
 .breadcrumb-area .breadcrumb-content p {
-  color: #BCBCBC;
+  color: var(--text-color);
   opacity: 0.7;
   margin-bottom: 24px;
 }

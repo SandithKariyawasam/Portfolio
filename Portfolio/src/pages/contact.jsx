@@ -56,65 +56,131 @@ const Contact = () => {
       <div className="contact-area">
         <div className="container">
           <div className="gx-row d-flex justify-content-between gap-24">
-            <div className="contact-infos">
-              <h3 data-aos="fade-up">Contact Info</h3>
-              <ul className="contact-details">
-                <li className="d-flex align-items-center" data-aos="zoom-in">
-                  <div className="icon-box shadow-box">
-                    <i className="iconoir-mail"></i>
-                  </div>
-                  <div className="right">
-                    <span>MAIL ME</span>
-                    <h4>sandithkariyawasam2001@gmail.com</h4>
-                  </div>
-                </li>
+            <div className="contact-infos" style={{ display: 'flex', flexDirection: 'column', gap: '25px', minWidth: 0, flex: '0 0 auto' }}>
+              
+              <div>
+                <h3 data-aos="fade-up" style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--icon-color)', marginBottom: '25px', textTransform: 'uppercase', letterSpacing: '1px' }}>Contact Info</h3>
+                <ul className="contact-details" style={{ display: 'flex', flexDirection: 'column', gap: '12px', padding: 0, margin: 0, listStyle: 'none' }}>
+                  
+                  <li className="d-flex align-items-center" data-aos="zoom-in" style={{ padding: '20px', backgroundColor: 'var(--card-bg)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.03)', gap: '20px' }}>
+                    <div 
+                      className="icon-box shadow-box" 
+                      style={{ 
+                        width: '60px', 
+                        height: '60px', 
+                        borderRadius: '16px', 
+                        backgroundColor: 'rgba(255,255,255,0.03)', 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        justifyContent: 'center',
+                        border: '1px solid rgba(255,255,255,0.05)'
+                      }}
+                    >
+                      <i className="iconoir-mail" style={{ fontSize: '24px', color: 'var(--primary_color)' }}></i>
+                    </div>
+                    <div className="right" style={{ minWidth: 0, flex: 1 }}>
+                      <span style={{ fontSize: '13px', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 'bold', display: 'block', marginBottom: '5px' }}>MAIL ME</span>
+                      <h4 style={{ fontSize: '15px', color: 'var(--text-color)', fontWeight: 'bold', margin: 0, wordBreak: 'break-all' }}>sandithkariyawasam2001@gmail.com</h4>
+                    </div>
+                  </li>
 
-                <li className="d-flex align-items-center" data-aos="zoom-in">
-                  <div className="icon-box shadow-box">
-                    <i className="iconoir-phone"></i>
-                  </div>
-                  <div className="right">
-                    <span>Contact ME</span>
-                    <h4>+94 76 942 3847</h4>
-                  </div>
-                </li>
+                  <li className="d-flex align-items-center" data-aos="zoom-in" data-aos-delay="100" style={{ padding: '20px', backgroundColor: 'var(--card-bg)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.03)', gap: '20px' }}>
+                    <div 
+                      className="icon-box shadow-box" 
+                      style={{ 
+                        width: '60px', 
+                        height: '60px', 
+                        borderRadius: '16px', 
+                        backgroundColor: 'rgba(255,255,255,0.03)', 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        justifyContent: 'center',
+                        border: '1px solid rgba(255,255,255,0.05)'
+                      }}
+                    >
+                      <i className="iconoir-phone" style={{ fontSize: '24px', color: 'var(--primary_color)' }}></i>
+                    </div>
+                    <div className="right">
+                      <span style={{ fontSize: '13px', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 'bold', display: 'block', marginBottom: '5px' }}>Contact ME</span>
+                      <h4 style={{ fontSize: '16px', color: 'var(--text-color)', fontWeight: 'bold', margin: 0 }}>+94 76 942 3847</h4>
+                    </div>
+                  </li>
 
-                <li className="d-flex align-items-center" data-aos="zoom-in">
-                  <div className="icon-box shadow-box">
-                    <i className="iconoir-pin-alt"></i>
-                  </div>
-                  <div className="right">
-                    <span>Location</span>
-                    <h4>
-                      22 Horana Road, Panadura <br />
-                      Sri Lanka <br />
-                      12500
-                    </h4>
-                  </div>
-                </li>
-              </ul>
+                  <li className="d-flex align-items-center" data-aos="zoom-in" data-aos-delay="200" style={{ padding: '20px', backgroundColor: 'var(--card-bg)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.03)', gap: '20px' }}>
+                    <div 
+                      className="icon-box shadow-box" 
+                      style={{ 
+                        width: '60px', 
+                        height: '60px', 
+                        borderRadius: '16px', 
+                        backgroundColor: 'rgba(255,255,255,0.03)', 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        justifyContent: 'center',
+                        border: '1px solid rgba(255,255,255,0.05)'
+                      }}
+                    >
+                      <i className="iconoir-pin-alt" style={{ fontSize: '24px', color: 'var(--primary_color)' }}></i>
+                    </div>
+                    <div className="right">
+                      <span style={{ fontSize: '13px', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 'bold', display: 'block', marginBottom: '5px' }}>Location</span>
+                      <h4 style={{ fontSize: '16px', color: 'var(--text-color)', lineHeight: '1.5', margin: 0 }}>
+                        22 Horana Road, Panadura <br />
+                        Sri Lanka, 12500
+                      </h4>
+                    </div>
+                  </li>
+                  
+                </ul>
+              </div>
 
-              <h3 data-aos="fade-up">Social Info</h3>
-              <ul
-                className="social-links d-flex align-center"
-                data-aos="zoom-in"
-              >
-                <li>
-                  <Link className="shadow-box" to="https://www.linkedin.com/in/sandith-kariyawasam-352069255/">
-                    <i className="iconoir-linkedin"></i>
-                  </Link>
-                </li>
-                <li>
-                  <Link className="shadow-box" to="https://www.facebook.com/sandith.kariyawasam.2025">
-                    <i className="iconoir-facebook"></i>
-                  </Link>
-                </li>
-                <li>
-                  <Link className="shadow-box" to="https://www.instagram.com/sandith.kariyawasam/">
-                    <i className="iconoir-instagram"></i>
-                  </Link>
-                </li>
-              </ul>
+              <div>
+                <h3 data-aos="fade-up" style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--icon-color)', marginBottom: '25px', textTransform: 'uppercase', letterSpacing: '1px' }}>Social Info</h3>
+                <ul
+                  className="social-links d-flex align-items-center"
+                  data-aos="zoom-in"
+                  style={{ padding: 0, margin: 0, listStyle: 'none', gap: '15px' }}
+                >
+                  {[
+                    { icon: 'iconoir-linkedin', link: 'https://www.linkedin.com/in/sandith-kariyawasam-352069255/' },
+                    { icon: 'iconoir-facebook', link: 'https://www.facebook.com/sandith.kariyawasam.2025' },
+                    { icon: 'iconoir-instagram', link: 'https://www.instagram.com/sandith.kariyawasam/' }
+                  ].map((social, idx) => (
+                    <li key={idx}>
+                      <Link 
+                        className="shadow-box" 
+                        to={social.link}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          width: '65px',
+                          height: '65px',
+                          backgroundColor: 'var(--card-bg)',
+                          borderRadius: '50%',
+                          border: '1px solid rgba(255,255,255,0.03)',
+                          color: 'var(--icon-color)',
+                          fontSize: '24px',
+                          transition: 'all 0.3s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = 'var(--primary_color)';
+                          e.currentTarget.style.color = '#fff';
+                          e.currentTarget.style.transform = 'translateY(-5px)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = 'var(--card-bg)';
+                          e.currentTarget.style.color = 'var(--icon-color)';
+                          e.currentTarget.style.transform = 'none';
+                        }}
+                      >
+                        <i className={social.icon}></i>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
             </div>
 
             <div data-aos="zoom-in" className="contact-form">

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import bg1 from "../assets/images/bg1.png";
 import me2 from "../assets/images/me.png";
@@ -6,8 +6,11 @@ import str2 from "../assets/images/star-2.png";
 import icon2 from "../assets/images/icon2.png";
 import icon from "../assets/images/icon.svg";
 import sign from "../assets/images/sign.png";
+import { ThemeContext } from "../context/ThemeContext";
 
 const About = () => {
+  const { theme } = useContext(ThemeContext);
+
   useEffect(() => {
     if (window.AOS) {
       window.AOS.init({
@@ -37,9 +40,9 @@ const About = () => {
             </h1>
             <div className="about-details-inner shadow-box">
               <img src={icon2} alt="Icon" />
-              <h1>Sandith Kariyawasam</h1>
+              <h1>{theme.name}</h1>
               <p>
-                I am a Software Engineer and DevOps practitioner based in Sri Lanka, focused on optimizing the path from code to production. While my core expertise encompasses web, mobile, and UI/UX design, I specialize in streamlining workflows through DevOps methodologies. I leverage my diverse experience across various fields to build robust infrastructure that supports seamless, high-quality user experiences.
+                {theme.aboutText}
               </p>
             </div>
           </div>
@@ -52,16 +55,13 @@ const About = () => {
               <h3>EXPERIENCE</h3>
 
               <ul>
-                <li>
-                  <p className="date">2022 - Present</p>
-                  <h2>Full-stack Developer</h2>
-                  <p className="type">Freelancer</p>
-                </li>
-                <li>
-                  <p className="date">2024 - Present</p>
-                  <h2>Front-End Developer</h2>
-                  <p className="type">Team DynamoSolutions</p>
-                </li>
+                {theme.experience.map(exp => (
+                  <li key={exp.id}>
+                    <p className="date">{exp.date}</p>
+                    <h2>{exp.title}</h2>
+                    <p className="type">{exp.company}</p>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -71,21 +71,13 @@ const About = () => {
               <h3>EDUCATION</h3>
 
               <ul>
-                <li>
-                  <p className="date">2020</p>
-                  <h2>
-                    G.C.E. Advanced Level (C, C, C) - 2020 <br />
-                    (Mathematical Stream - Combined Mathematics, Physics, ICT)
-                  </h2>
-                  <p className="type">
-                    Sri Sumangala College, Panadura, Sri Lanka
-                  </p>
-                </li>
-                <li>
-                  <p className="date">2022 - Present</p>
-                  <h2>BSc. (Honours) in Software Engineering</h2>
-                  <p className="type">NSBM Green University</p>
-                </li>
+                {theme.education.map(edu => (
+                  <li key={edu.id}>
+                    <p className="date">{edu.date}</p>
+                    <h2>{edu.degree}</h2>
+                    <p className="type">{edu.institution}</p>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -99,28 +91,28 @@ const About = () => {
                   <img src={bg1} alt="Background design" className="bg-img" />
                   <div className="inner-profile-icons shadow-box">
                     <a
-                      href="https://www.linkedin.com/in/sandith-kariyawasam-352069255/"
+                      href={theme.socialLinkedin || "https://www.linkedin.com/in/sandith-kariyawasam-352069255/"}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <i className="iconoir-linkedin"></i>
                     </a>
                     <a
-                      href="https://www.facebook.com/sandith.kariyawasam.2025"
+                      href={theme.socialFacebook || "https://www.facebook.com/sandith.kariyawasam.2025"}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <i className="iconoir-facebook"></i>
                     </a>
                     <a
-                      href="https://www.instagram.com/sandith.kariyawasam/"
+                      href={theme.socialInstagram || "https://www.instagram.com/sandith.kariyawasam/"}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <i className="iconoir-instagram"></i>
                     </a>
                     <a
-                      href="https://github.com/SandithKariyawasam"
+                      href={theme.socialGithub || "https://github.com/SandithKariyawasam"}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

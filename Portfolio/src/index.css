@@ -1,19 +1,29 @@
 :root {
   --primary_color: #5B78F6;
+  --bg-color: #0F0F0F;
+  --text-color: #9f9f9f;
+  --card-bg: #0F0F0F;
+  --icon-color: #ffffff;
   --dark: #323232;
 }
+
 *,*::before,*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+p {
+  color: var(--text-color) !important;
+  opacity: 1 !important;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   scroll-behavior: smooth;
-  color: #9f9f9f;
-  background: #0F0F0F;
+  color: var(--text-color);
+  background: var(--bg-color);
   line-height: 19.2px;
 }
 img {

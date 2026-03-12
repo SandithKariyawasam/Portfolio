@@ -36,9 +36,9 @@ const account = () => {
 
   return (
     <>
-      <div className="dashboard-container">
+      <div className="dashboard-container" style={{ display: 'block' }}>
 
-        <div className="dashboard-main">
+        <div className="dashboard-main" style={{ marginBottom: '30px' }}>
 
           <div className="transfer-cards">
             <div className="transfer-card">
@@ -211,7 +211,7 @@ const account = () => {
 
             <br/>
 
-            <div className="table-card">
+            <div className="table-card" style={{ maxHeight: "490px", overflowY: "auto" }}>
               <table className="data-table">
                 <tbody>
                   <tr>
@@ -371,7 +371,7 @@ const account = () => {
         </div>
 
 
-        <div className="dashboard-sidebar">
+        <div className="dashboard-sidebar" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', marginTop: '30px' }}>
           <div className="transaction-card">
             <h3 className="section-title">Edit Your Details</h3>
 

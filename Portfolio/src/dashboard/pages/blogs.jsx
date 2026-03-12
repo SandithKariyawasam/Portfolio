@@ -14,9 +14,9 @@ const blogs = () => {
 
   return (
     <>
-      <div className="dashboard-container">
+      <div className="dashboard-container" style={{ display: 'block' }}>
 
-        <div className="dashboard-main">
+        <div className="dashboard-main" style={{ marginBottom: '30px' }}>
 
 
 
@@ -64,47 +64,61 @@ const blogs = () => {
               </div>
             </div>
 
-            <div className="transaction-card">
+            <div className="transaction-card" style={{ padding: '30px' }}>
               <h3 className="section-title">Total Analytics</h3>
 
-              <div className="transaction-wrap">
-
-                <div className="transfer-cards-blog">
-                  <h3>Total Likes</h3>
-                  <p>12563</p>
+              <div className="transfer-cards" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', marginBottom: '40px', gap: '20px' }}>
+                <div className="transfer-card" style={{ padding: '20px' }}>
+                  <div className="card-icon" style={{ marginBottom: '10px', height: '40px', width: '40px', fontSize: '18px' }}>
+                    <i className="fa-solid fa-thumbs-up"></i>
+                  </div>
+                  <p className="card-title" style={{ fontSize: '14px' }}>Total Likes</p>
+                  <h2 className="card-amount" style={{ fontSize: '22px' }}>12,563</h2>
                 </div>
 
-                <div className="transfer-cards-blog">
-                  <h3>Total Views</h3>
-                  <p>168025</p>
+                <div className="transfer-card" style={{ padding: '20px' }}>
+                  <div className="card-icon" style={{ marginBottom: '10px', height: '40px', width: '40px', fontSize: '18px' }}>
+                    <i className="fa-solid fa-eye"></i>
+                  </div>
+                  <p className="card-title" style={{ fontSize: '14px' }}>Total Views</p>
+                  <h2 className="card-amount" style={{ fontSize: '22px' }}>168,025</h2>
                 </div>
 
-                <div className="transfer-cards-blog">
-                  <h3>Total Blogs</h3>
-                  <p>78</p>
+                <div className="transfer-card" style={{ padding: '20px' }}>
+                  <div className="card-icon" style={{ marginBottom: '10px', height: '40px', width: '40px', fontSize: '18px' }}>
+                    <i className="fa-solid fa-pen-nib"></i>
+                  </div>
+                  <p className="card-title" style={{ fontSize: '14px' }}>Total Blogs</p>
+                  <h2 className="card-amount" style={{ fontSize: '22px' }}>78</h2>
                 </div>
-
               </div>
 
-              <h3 className="section-title" style={{ marginTop: "20px" }}>My Analytics</h3>
+              <h3 className="section-title" style={{ marginTop: "10px" }}>My Analytics</h3>
 
-              <div className="transaction-wrap">
-
-                <div className="transfer-cards-blog">
-                  <h3>M Likes</h3>
-                  <p>158</p>
+              <div className="transfer-cards" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', marginBottom: '0', gap: '20px' }}>
+                <div className="transfer-card" style={{ padding: '20px' }}>
+                  <div className="card-icon" style={{ marginBottom: '10px', height: '40px', width: '40px', fontSize: '18px' }}>
+                    <i className="fa-solid fa-thumbs-up"></i>
+                  </div>
+                  <p className="card-title" style={{ fontSize: '14px' }}>My Likes</p>
+                  <h2 className="card-amount" style={{ fontSize: '22px' }}>158</h2>
                 </div>
 
-                <div className="transfer-cards-blog">
-                  <h3>My Views</h3>
-                  <p>1,200</p>
+                <div className="transfer-card" style={{ padding: '20px' }}>
+                  <div className="card-icon" style={{ marginBottom: '10px', height: '40px', width: '40px', fontSize: '18px' }}>
+                    <i className="fa-solid fa-eye"></i>
+                  </div>
+                  <p className="card-title" style={{ fontSize: '14px' }}>My Views</p>
+                  <h2 className="card-amount" style={{ fontSize: '22px' }}>1,200</h2>
                 </div>
 
-                <div className="transfer-cards-blog">
-                  <h3>My Blogs</h3>
-                  <p>6</p>
+                <div className="transfer-card" style={{ padding: '20px' }}>
+                  <div className="card-icon" style={{ marginBottom: '10px', height: '40px', width: '40px', fontSize: '18px' }}>
+                    <i className="fa-solid fa-pen-nib"></i>
+                  </div>
+                  <p className="card-title" style={{ fontSize: '14px' }}>My Blogs</p>
+                  <h2 className="card-amount" style={{ fontSize: '22px' }}>6</h2>
                 </div>
-
               </div>
             </div>
 
@@ -126,7 +140,7 @@ const blogs = () => {
 
             <br />
 
-            <div className="table-card">
+            <div className="table-card" style={{ maxHeight: "490px", overflowY: "auto" }}>
               <table className="data-table">
                 <tbody>
                   <tr>
@@ -247,7 +261,7 @@ const blogs = () => {
         </div>
 
 
-        <div className="dashboard-sidebar">
+        <div className="dashboard-sidebar" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', marginTop: '30px' }}>
           <div className="transaction-card">
             <h3 className="section-title">Create New Blog</h3>
 
