@@ -77,7 +77,7 @@ function App() {
               {loading ? <Preloader /> : <Route path="/contact" element={<Contact />} />}
               {loading ? <Preloader /> : <Route path="/service" element={<Service />} />}
               {loading ? <Preloader /> : <Route path="/work-details/:id" element={<Workdetails />} />}
-              {loading ? <Preloader /> : <Route path="/blog-details" element={<Blogdetails />} />}
+              {loading ? <Preloader /> : <Route path="/blog-details/:id" element={<Blogdetails />} />}
 
               <Route path="/dashboard/*" element={<PrivateRoute> <Dashboard /> </PrivateRoute>} />
             </Routes>
