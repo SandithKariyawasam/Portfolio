@@ -17,14 +17,20 @@ const BlogDetails = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    if (window.AOS) {
-      window.AOS.init({
-        duration: 800,
-        once: true,
-      });
-      window.AOS.refresh();
+    if (!loading) {
+      const initAOS = () => {
+        if (window.AOS) {
+          window.AOS.init({ duration: 800, once: true });
+          setTimeout(() => window.AOS.refreshHard(), 100);
+        } else {
+          setTimeout(initAOS, 100);
+        }
+      };
+      initAOS();
     }
+  }, [loading]);
 
+  useEffect(() => {
     const fetchBlogData = async () => {
       try {
         const [blogRes, recentRes] = await Promise.all([
@@ -109,19 +115,11 @@ const BlogDetails = () => {
     }
   };
 
-  if (loading) {
-    return <div style={{ textAlign: "center", padding: "150px 0", color: "var(--text-color)" }}>Loading...</div>;
-  }
-
-  if (!blog) {
-    return <div style={{ textAlign: "center", padding: "150px 0", color: "var(--text-color)" }}>Blog not found.</div>;
-  }
-
   return (
     <>
       <div className="breadcrumb-area">
         <div className="container">
-          <div className="breadcrumb-content" data-aos="fade-up">
+          <div className="breadcrumb-content">
             <p style={{ letterSpacing: '2px', color: 'var(--primary_color)', fontWeight: 'bold' }}>HOME - BLOG DETAILS</p>
             <h1 className="section-heading" style={{ fontSize: '48px', marginTop: '10px' }}>
               <img src={star2} alt="Star" /> Article <img src={star2} alt="Star" />
@@ -138,7 +136,6 @@ const BlogDetails = () => {
             <div className="col-lg-8 col-md-12">
               <div
                 className="blog-details-content shadow-box"
-                data-aos="fade-up"
                 style={{
                   backgroundColor: 'var(--card-bg)',
                   padding: '40px',
@@ -146,6 +143,12 @@ const BlogDetails = () => {
                   border: '1px solid rgba(255,255,255,0.03)'
                 }}
               >
+                {loading ? (
+                  <div style={{ textAlign: "center", padding: "100px 0", color: "var(--text-color)" }}>Loading...</div>
+                ) : !blog ? (
+                  <div style={{ textAlign: "center", padding: "100px 0", color: "var(--text-color)" }}>Blog not found.</div>
+                ) : (
+                  <>
                 <Link
                   to="/blog"
                   style={{
@@ -326,6 +329,8 @@ const BlogDetails = () => {
                     </button>
                   </form>
                 </div>
+                </>
+                )}
               </div>
             </div>
 
@@ -336,7 +341,6 @@ const BlogDetails = () => {
                 {/* Search Widget */}
                 <div
                   className="shadow-box"
-                  data-aos="fade-left"
                   style={{
                     padding: '30px',
                     borderRadius: '24px',
@@ -382,8 +386,6 @@ const BlogDetails = () => {
                 {/* Recent Posts Widget */}
                 <div
                   className="shadow-box"
-                  data-aos="fade-left"
-                  data-aos-delay="100"
                   style={{
                     padding: '30px',
                     borderRadius: '24px',
