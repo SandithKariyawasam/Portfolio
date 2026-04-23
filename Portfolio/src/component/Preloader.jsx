@@ -4,16 +4,16 @@ import "../assets/css/preloader.css";
 const Preloader = () => {
     return (
         <>
-            <div class="loader-wrapper">
-                <div class="loaders">
-                    <div class="loader-square"></div>
-                    <div class="loader-square"></div>
-                    <div class="loader-square"></div>
-                    <div class="loader-square"></div>
-                    <div class="loader-square"></div>
-                    <div class="loader-square"></div>
-                    <div class="loader-square"></div>
-                    <div class="loader-square"></div>
+            <div className="loader-wrapper">
+                <div className="loaders">
+                    <div className="loader-square"></div>
+                    <div className="loader-square"></div>
+                    <div className="loader-square"></div>
+                    <div className="loader-square"></div>
+                    <div className="loader-square"></div>
+                    <div className="loader-square"></div>
+                    <div className="loader-square"></div>
+                    <div className="loader-square"></div>
                 </div>
             </div>
         </>
