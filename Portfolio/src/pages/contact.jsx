@@ -59,10 +59,10 @@ const Contact = () => {
             <div className="contact-infos" style={{ display: 'flex', flexDirection: 'column', gap: '25px', minWidth: 0, flex: '0 0 auto' }}>
               
               <div>
-                <h3 data-aos="fade-up" style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--icon-color)', marginBottom: '25px', textTransform: 'uppercase', letterSpacing: '1px' }}>Contact Info</h3>
+                <h3 style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--icon-color)', marginBottom: '25px', textTransform: 'uppercase', letterSpacing: '1px' }}>Contact Info</h3>
                 <ul className="contact-details" style={{ display: 'flex', flexDirection: 'column', gap: '12px', padding: 0, margin: 0, listStyle: 'none' }}>
                   
-                  <li className="d-flex align-items-center" data-aos="zoom-in" style={{ padding: '20px', backgroundColor: 'var(--card-bg)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.03)', gap: '20px' }}>
+                  <li className="d-flex align-items-center" style={{ padding: '20px', backgroundColor: 'var(--card-bg)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.03)', gap: '20px' }}>
                     <div 
                       className="icon-box shadow-box" 
                       style={{ 
@@ -84,7 +84,7 @@ const Contact = () => {
                     </div>
                   </li>
 
-                  <li className="d-flex align-items-center" data-aos="zoom-in" data-aos-delay="100" style={{ padding: '20px', backgroundColor: 'var(--card-bg)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.03)', gap: '20px' }}>
+                  <li className="d-flex align-items-center" style={{ padding: '20px', backgroundColor: 'var(--card-bg)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.03)', gap: '20px' }}>
                     <div 
                       className="icon-box shadow-box" 
                       style={{ 
@@ -106,7 +106,7 @@ const Contact = () => {
                     </div>
                   </li>
 
-                  <li className="d-flex align-items-center" data-aos="zoom-in" data-aos-delay="200" style={{ padding: '20px', backgroundColor: 'var(--card-bg)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.03)', gap: '20px' }}>
+                  <li className="d-flex align-items-center" style={{ padding: '20px', backgroundColor: 'var(--card-bg)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.03)', gap: '20px' }}>
                     <div 
                       className="icon-box shadow-box" 
                       style={{ 
@@ -135,10 +135,9 @@ const Contact = () => {
               </div>
 
               <div>
-                <h3 data-aos="fade-up" style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--icon-color)', marginBottom: '25px', textTransform: 'uppercase', letterSpacing: '1px' }}>Social Info</h3>
+                <h3 style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--icon-color)', marginBottom: '25px', textTransform: 'uppercase', letterSpacing: '1px' }}>Social Info</h3>
                 <ul
                   className="social-links d-flex align-items-center"
-                  data-aos="zoom-in"
                   style={{ padding: 0, margin: 0, listStyle: 'none', gap: '15px' }}
                 >
                   {[
@@ -183,7 +182,7 @@ const Contact = () => {
 
             </div>
 
-            <div data-aos="zoom-in" className="contact-form">
+            <div className="contact-form">
               <div className="shadow-box">
                 <img src={bg1} alt="BG" className="bg-img" />
                 <img src={icon3} alt="Icon" />

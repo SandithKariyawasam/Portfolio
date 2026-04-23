@@ -24,7 +24,7 @@ const About = () => {
     <div className="about-area">
       <div className="container">
         <div className="d-flex about-me-wrap align-items-start gap-24">
-          <div data-aos="zoom-in">
+          <div>
             <div className="about-image-box shadow-box">
               <img src={bg1} alt="Background design" className="bg-img" />
               <div className="image-inner">
@@ -33,8 +33,8 @@ const About = () => {
             </div>
           </div>
 
-          <div className="about-details" data-aos="zoom-in">
-            <h1 className="section-heading" data-aos="fade-up">
+          <div className="about-details">
+            <h1 className="section-heading">
               <img src={str2} alt="Star decoration icon" /> Self-summary{" "}
               <img src={str2} alt="Star decoration icon" />
             </h1>
@@ -49,7 +49,7 @@ const About = () => {
         </div>
 
         <div className="row mt-24">
-          <div className="col-md-6" data-aos="zoom-in">
+          <div className="col-md-6">
             <div className="about-edc-exp about-experience shadow-box">
               <img src={bg1} alt="Background design" className="bg-img" />
               <h3>EXPERIENCE</h3>
@@ -65,7 +65,7 @@ const About = () => {
               </ul>
             </div>
           </div>
-          <div className="col-md-6" data-aos="zoom-in">
+          <div className="col-md-6">
             <div className="about-edc-exp about-education shadow-box">
               <img src={bg1} alt="Background design" className="bg-img" />
               <h3>EDUCATION</h3>
@@ -86,7 +86,7 @@ const About = () => {
         <div className="row mt-24">
           <div className="col-md-12">
             <div className="d-flex profile-contact-credentials-wrap gap-24">
-              <div data-aos="zoom-in">
+              <div>
                 <div className="about-profile-box info-box shadow-box h-full">
                   <img src={bg1} alt="Background design" className="bg-img" />
                   <div className="inner-profile-icons shadow-box">
@@ -132,7 +132,7 @@ const About = () => {
                 </div>
               </div>
 
-              <div data-aos="zoom-in" className="flex-1">
+              <div className="flex-1">
                 <div className="about-contact-box info-box shadow-box">
                   <Link to="/contact" className="overlay-link"></Link>
                   <img src={bg1} alt="Background design" className="bg-img" />
@@ -147,7 +147,7 @@ const About = () => {
                 </div>
               </div>
 
-              <div data-aos="zoom-in" className="h-full">
+              <div className="h-full">
                 <div className="about-crenditials-box info-box shadow-box">
                   <Link to="/credentials" className="overlay-link"></Link>
                   <img src={bg1} alt="Background design" className="bg-img" />

@@ -38,7 +38,7 @@ const Blog = () => {
     <>
       <div className="breadcrumb-area">
         <div className="container">
-          <div className="breadcrumb-content" data-aos="fade-up">
+          <div className="breadcrumb-content">
             <p style={{ letterSpacing: '2px', color: 'var(--primary_color)', fontWeight: 'bold' }}>HOME - BLOG</p>
             <h1 className="section-heading" style={{ fontSize: '48px', marginTop: '10px' }}>
               <img src={str2} alt="Star" /> My Latest Articles{" "}
@@ -70,8 +70,6 @@ const Blog = () => {
                   <div
                     key={post.id}
                     className="shadow-box"
-                    data-aos="fade-up"
-                    data-aos-delay={idx * 100}
                     style={{
                       borderRadius: '24px',
                       backgroundColor: 'var(--card-bg)',

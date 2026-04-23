@@ -21,14 +21,14 @@ const Service = () => {
     <>
       <div className="service-area">
         <div className="container">
-          <h1 className="section-heading" data-aos="fade-up">
+          <h1 className="section-heading">
             <img src={star2} alt="Star" /> My Offerings{" "}
             <img src={star2} alt="Star" />
           </h1>
 
           <div className="row">
             <div className="col-md-4">
-              <div className="service-sidebar" data-aos="fade-right">
+              <div className="service-sidebar">
                 <div className="service-sidebar-inner shadow-box">
                   <ul>
                     {(theme.services || []).map(svc => (
@@ -43,12 +43,12 @@ const Service = () => {
             </div>
 
             <div className="col-md-8">
-              <h1 className="section-heading" data-aos="fade-up">
+              <h1 className="section-heading">
                 <img src={star2} alt="Star" /> My Offerings{" "}
                 <img src={star2} alt="Star" />
               </h1>
 
-              <div className="service-content-wrap" data-aos="zoom-in">
+              <div className="service-content-wrap">
                 <div className="service-content-inner shadow-box">
                   <div className="service-items">
                     {(theme.services || []).map(svc => (
@@ -66,7 +66,7 @@ const Service = () => {
           <div className="row mt-24">
             <div className="col-md-12">
               <div className="d-flex profile-contact-credentials-wrap gap-24">
-                <div data-aos="zoom-in">
+                <div>
                   <div className="about-profile-box info-box shadow-box h-full">
                     <img src={bg1} alt="BG" className="bg-img" />
                     <div className="inner-profile-icons shadow-box">
@@ -92,7 +92,7 @@ const Service = () => {
                   </div>
                 </div>
 
-                <div data-aos="zoom-in" className="flex-1">
+                <div className="flex-1">
                   <div className="about-contact-box info-box shadow-box">
                     <Link className="overlay-link" to="./contact"></Link>
                     <img src={bg1} alt="BG" className="bg-img" />
@@ -107,7 +107,7 @@ const Service = () => {
                   </div>
                 </div>
 
-                <div data-aos="zoom-in" className="h-full">
+                <div className="h-full">
                   <div className="about-crenditials-box info-box shadow-box">
                     <Link className="overlay-link" to="./credentials"></Link>
                     <img src={bg1} alt="BG" className="bg-img" />

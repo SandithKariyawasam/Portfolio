@@ -21,7 +21,7 @@ const Credentials = () => {
       <section className="credential-area">
         <div className="container">
           <div className="gx-row d-flex">
-            <div className="credential-sidebar-wrap" data-aos="zoom-in">
+            <div className="credential-sidebar-wrap">
               <div className="credential-sidebar text-center">
                 <div className="shadow-box">
                   <img src={bg1} alt="BG" className="bg-img" />
@@ -64,7 +64,6 @@ const Credentials = () => {
             <div className="credential-content flex-1">
               <div 
                 className="credential-about shadow-box" 
-                data-aos="zoom-in"
                 style={{
                   backgroundColor: 'var(--card-bg)',
                   padding: '40px',
@@ -82,7 +81,6 @@ const Credentials = () => {
 
               <div 
                 className="shadow-box credential-experience" 
-                data-aos="zoom-in"
                 style={{
                   backgroundColor: 'var(--card-bg)',
                   padding: '40px',
@@ -91,14 +89,12 @@ const Credentials = () => {
                   marginBottom: '40px'
                 }}
               >
-                <h2 data-aos="fade-up" style={{ fontSize: '32px', marginBottom: '30px', color: 'var(--icon-color)', fontWeight: 'bold' }}>Experience</h2>
+                <h2 style={{ fontSize: '32px', marginBottom: '30px', color: 'var(--icon-color)', fontWeight: 'bold' }}>Experience</h2>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
                   {theme.experience.map((exp, idx) => (
                     <div 
                       key={exp.id} 
                       className="credential-edc-exp-item" 
-                      data-aos="fade-up"
-                      data-aos-delay={idx * 100}
                       style={{
                         paddingBottom: idx !== theme.experience.length - 1 ? '30px' : '0',
                         borderBottom: idx !== theme.experience.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none'
@@ -115,7 +111,6 @@ const Credentials = () => {
 
               <div 
                 className="shadow-box credential-education" 
-                data-aos="zoom-in"
                 style={{
                   backgroundColor: 'var(--card-bg)',
                   padding: '40px',
@@ -124,14 +119,12 @@ const Credentials = () => {
                   marginBottom: '40px'
                 }}
               >
-                <h2 data-aos="fade-up" style={{ fontSize: '32px', marginBottom: '30px', color: 'var(--icon-color)', fontWeight: 'bold' }}>Education</h2>
+                <h2 style={{ fontSize: '32px', marginBottom: '30px', color: 'var(--icon-color)', fontWeight: 'bold' }}>Education</h2>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
                   {theme.education.map((edu, idx) => (
                     <div 
                       key={edu.id} 
                       className="credential-edc-exp-item" 
-                      data-aos="fade-up"
-                      data-aos-delay={idx * 100}
                       style={{
                         paddingBottom: idx !== theme.education.length - 1 ? '30px' : '0',
                         borderBottom: idx !== theme.education.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none'
@@ -148,7 +141,6 @@ const Credentials = () => {
 
               <div 
                 className="skills-wrap shadow-box" 
-                data-aos="zoom-in"
                 style={{
                   backgroundColor: 'var(--card-bg)',
                   padding: '40px',
@@ -156,7 +148,7 @@ const Credentials = () => {
                   border: '1px solid rgba(255,255,255,0.03)'
                 }}
               >
-                <h2 data-aos="fade-up" style={{ fontSize: '32px', marginBottom: '30px', color: 'var(--icon-color)', fontWeight: 'bold' }}>Skills</h2>
+                <h2 style={{ fontSize: '32px', marginBottom: '30px', color: 'var(--icon-color)', fontWeight: 'bold' }}>Skills</h2>
                   <div 
                     style={{ 
                       display: 'flex',
@@ -168,8 +160,6 @@ const Credentials = () => {
                       <div 
                         key={skill.id} 
                         className="skill-item" 
-                        data-aos="fade-up"
-                        data-aos-delay={idx * 50}
                         style={{
                           backgroundColor: 'rgba(255,255,255,0.02)',
                           borderRadius: '30px',

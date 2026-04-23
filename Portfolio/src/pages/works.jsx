@@ -32,7 +32,7 @@ const Works = () => {
       <div className="container">
 
         {/* Title Section */}
-        <h1 className="section-heading" data-aos="fade-up" style={{ marginBottom: '40px' }}>
+        <h1 className="section-heading" style={{ marginBottom: '40px' }}>
           <img src={star2} alt="Star" /> All Projects <img src={star2} alt="Star" />
         </h1>
 
@@ -42,7 +42,7 @@ const Works = () => {
             <div></div>
           ) : (
             projects.map((project, index) => (
-              <div className="col-md-4" key={project.id} data-aos="zoom-in">
+              <div className="col-md-4" key={project.id}>
                 <div className="project-item shadow-box">
 
                   <Link to={`/work-details/${project.id}`} className="overlay-link"></Link>
