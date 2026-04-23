@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, useMemo } from "react";
+import JoditEditor from 'jodit-react';
 import '../assets/css/blog.css'
 
 const Blogs = () => {
@@ -33,6 +34,25 @@ const Blogs = () => {
       setLoading(false);
     }
   };
+
+  const editorConfig = useMemo(() => ({
+    readonly: false,
+    placeholder: 'Start typing your blog content here...',
+    height: 500,
+    uploader: {
+      insertImageAsBase64URI: true // Allows dropping images directly into the editor
+    },
+    buttons: [
+      'source', '|',
+      'bold', 'strikethrough', 'underline', 'italic', '|',
+      'ul', 'ol', '|',
+      'outdent', 'indent', '|',
+      'font', 'fontsize', 'brush', 'paragraph', '|',
+      'image', 'table', 'link', '|',
+      'align', 'undo', 'redo', '|',
+      'hr', 'eraser', 'fullsize'
+    ]
+  }), []);
 
   useEffect(() => {
     fetchBlogs();
@@ -242,7 +262,15 @@ const Blogs = () => {
             <div className="section_form">
               <form onSubmit={handleCreateBlog} className="feed-form">
                 <input required placeholder="Title" type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-                <textarea required placeholder="Description" rows="10" cols="50" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
+                <div style={{ marginBottom: '20px' }}>
+                  <JoditEditor
+                    value={description}
+                    config={editorConfig}
+                    tabIndex={1}
+                    onBlur={newContent => setDescription(newContent)}
+                    onChange={newContent => {}} // Handle onBlur for performance
+                  />
+                </div>
 
                 <div className="file-upload-form">
                   <label htmlFor="file-create" className="file-upload-label">
@@ -306,7 +334,15 @@ const Blogs = () => {
             <form onSubmit={handleUpdateBlog} className="feed-form">
               <h4>Edit Blog: {currentBlog.id}</h4>
               <input required placeholder="Title" type="text" value={editTitle} onChange={(e) => setEditTitle(e.target.value)} />
-              <textarea required placeholder="Description" rows="10" cols="50" value={editDescription} onChange={(e) => setEditDescription(e.target.value)}></textarea>
+              <div style={{ marginBottom: '20px' }}>
+                <JoditEditor
+                  value={editDescription}
+                  config={editorConfig}
+                  tabIndex={1}
+                  onBlur={newContent => setEditDescription(newContent)}
+                  onChange={newContent => {}}
+                />
+              </div>
 
               <div className="file-upload-form">
                 <label htmlFor="file-edit" className="file-upload-label">

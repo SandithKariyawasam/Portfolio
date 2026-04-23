@@ -267,9 +267,11 @@ const BlogDetails = () => {
                   {blog.title}
                 </h1>
 
-                <div style={{ color: 'var(--text-color)', fontSize: '16px', lineHeight: '1.8', whiteSpace: 'pre-wrap' }}>
-                  {blog.description}
-                </div>
+                <div 
+                  className="blog-html-content"
+                  style={{ color: 'var(--text-color)', fontSize: '16px', lineHeight: '1.8' }}
+                  dangerouslySetInnerHTML={{ __html: blog.description }}
+                />
 
                 {/* Display Comments */}
                 {blog.comments && blog.comments.length > 0 && (

@@ -84,6 +84,71 @@ a {
 
 
 
+/* Custom Rich Text Blog Content Styling */
+.blog-html-content {
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.8;
+}
+.blog-html-content * {
+  /* Strip out hardcoded backgrounds from copy-pasting, but leave Jodit's code block backgrounds intact by excluding pre/code later */
+  background-color: transparent !important;
+}
+.blog-html-content h1, 
+.blog-html-content h2, 
+.blog-html-content h3, 
+.blog-html-content h4, 
+.blog-html-content h5, 
+.blog-html-content h6 {
+  color: var(--icon-color) !important;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+.blog-html-content h1 { font-size: 32px; }
+.blog-html-content h2 { font-size: 28px; }
+.blog-html-content h3 { font-size: 24px; }
+.blog-html-content h4 { font-size: 20px; }
+
+.blog-html-content p, 
+.blog-html-content span, 
+.blog-html-content li {
+  color: var(--text-color);
+}
+
+.blog-html-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+.blog-html-content pre,
+.blog-html-content pre * {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+.blog-html-content pre {
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ddd !important;
+  margin: 20px 0;
+}
+.blog-html-content code {
+  font-family: monospace;
+}
+.blog-html-content p {
+  margin-bottom: 15px;
+}
+.blog-html-content ul, .blog-html-content ol {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+.blog-html-content a {
+  color: var(--primary_color) !important;
+  text-decoration: underline;
+}
+
 /* # Margin */
 .mt-24 {
     margin-top: 24px;
