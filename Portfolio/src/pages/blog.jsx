@@ -8,6 +8,12 @@ const Blog = () => {
   const [searchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState(searchParams.get("search") || "");
 
+  const stripHtml = (html) => {
+    if (!html) return "";
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    return doc.body.textContent || "";
+  };
+
   useEffect(() => {
     if (window.AOS) {
       window.AOS.init({
@@ -114,7 +120,7 @@ const Blog = () => {
                         </Link>
                       </h2>
                       <p style={{ color: 'var(--text-color)', fontSize: '15px', lineHeight: '1.7', marginBottom: '25px', flex: 1 }}>
-                        {post.description ? post.description.substring(0, 150) + "..." : ""}
+                        {post.description ? stripHtml(post.description).substring(0, 150) + "..." : ""}
                       </p>
 
                       <Link
