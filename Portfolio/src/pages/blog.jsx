@@ -60,89 +60,95 @@ const Blog = () => {
 
             {/* Main Blog Grid */}
             <div className="col-lg-8 col-md-12">
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-                  gap: '30px'
-                }}
-              >
-                {blogPosts
-                  .filter(post => 
-                    post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                    post.description.toLowerCase().includes(searchQuery.toLowerCase())
-                  )
-                  .map((post, idx) => (
-                  <div
-                    key={post.id}
-                    className="shadow-box"
-                    style={{
-                      borderRadius: '24px',
-                      backgroundColor: 'var(--card-bg)',
-                      overflow: 'hidden',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      border: '1px solid rgba(255,255,255,0.03)',
-                      transition: 'transform 0.4s ease, box-shadow 0.4s ease',
-                      cursor: 'pointer'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-8px)';
-                      e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.4)';
-                      e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'none';
-                      e.currentTarget.style.boxShadow = 'none';
-                      e.currentTarget.querySelector('img').style.transform = 'scale(1)';
-                    }}
-                  >
-                    <div style={{ width: '100%', height: '240px', overflow: 'hidden', position: 'relative' }}>
-                      <img
-                        src={post.coverUrl}
-                        alt={post.title}
-                        style={{
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover',
-                          transition: 'transform 0.6s ease'
-                        }}
-                      />
-                      <div style={{ position: 'absolute', top: '15px', right: '15px', backgroundColor: 'rgba(15, 15, 15, 0.75)', backdropFilter: 'blur(10px)', padding: '6px 14px', borderRadius: '20px', color: '#fff', fontSize: '13px', fontWeight: 'bold', border: '1px solid rgba(255,255,255,0.1)' }}>
-                        {new Date(post.createdAt).toLocaleDateString()}
+              {loading ? (
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '300px' }}>
+                  <div className="custom-spinner"></div>
+                </div>
+              ) : (
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+                    gap: '30px'
+                  }}
+                >
+                  {blogPosts
+                    .filter(post => 
+                      post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                      post.description.toLowerCase().includes(searchQuery.toLowerCase())
+                    )
+                    .map((post, idx) => (
+                    <div
+                      key={post.id}
+                      className="shadow-box"
+                      style={{
+                        borderRadius: '24px',
+                        backgroundColor: 'var(--card-bg)',
+                        overflow: 'hidden',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        border: '1px solid rgba(255,255,255,0.03)',
+                        transition: 'transform 0.4s ease, box-shadow 0.4s ease',
+                        cursor: 'pointer'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translateY(-8px)';
+                        e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.4)';
+                        e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'none';
+                        e.currentTarget.style.boxShadow = 'none';
+                        e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+                      }}
+                    >
+                      <div style={{ width: '100%', height: '240px', overflow: 'hidden', position: 'relative' }}>
+                        <img
+                          src={post.coverUrl}
+                          alt={post.title}
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            transition: 'transform 0.6s ease'
+                          }}
+                        />
+                        <div style={{ position: 'absolute', top: '15px', right: '15px', backgroundColor: 'rgba(15, 15, 15, 0.75)', backdropFilter: 'blur(10px)', padding: '6px 14px', borderRadius: '20px', color: '#fff', fontSize: '13px', fontWeight: 'bold', border: '1px solid rgba(255,255,255,0.1)' }}>
+                          {new Date(post.createdAt).toLocaleDateString()}
+                        </div>
+                      </div>
+
+                      <div style={{ padding: '30px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                        <h2 style={{ fontSize: '22px', fontWeight: 'bold', lineHeight: '1.4', marginBottom: '15px', color: 'var(--icon-color)' }}>
+                          <Link to={`/blog-details/${post.id}`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                            {post.title}
+                          </Link>
+                        </h2>
+                        <p style={{ color: 'var(--text-color)', fontSize: '15px', lineHeight: '1.7', marginBottom: '25px', flex: 1 }}>
+                          {post.description ? stripHtml(post.description).substring(0, 150) + "..." : ""}
+                        </p>
+
+                        <Link
+                          to={`/blog-details/${post.id}`}
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            color: 'var(--primary_color)',
+                            fontWeight: 'bold',
+                            textDecoration: 'none',
+                            fontSize: '15px',
+                            textTransform: 'uppercase',
+                            letterSpacing: '1px'
+                          }}
+                        >
+                          Read Article <i className="iconoir-arrow-up-right" style={{ fontSize: '18px' }}></i>
+                        </Link>
                       </div>
                     </div>
-
-                    <div style={{ padding: '30px', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                      <h2 style={{ fontSize: '22px', fontWeight: 'bold', lineHeight: '1.4', marginBottom: '15px', color: 'var(--icon-color)' }}>
-                        <Link to={`/blog-details/${post.id}`} style={{ color: 'inherit', textDecoration: 'none' }}>
-                          {post.title}
-                        </Link>
-                      </h2>
-                      <p style={{ color: 'var(--text-color)', fontSize: '15px', lineHeight: '1.7', marginBottom: '25px', flex: 1 }}>
-                        {post.description ? stripHtml(post.description).substring(0, 150) + "..." : ""}
-                      </p>
-
-                      <Link
-                        to={`/blog-details/${post.id}`}
-                        style={{
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '8px',
-                          color: 'var(--primary_color)',
-                          fontWeight: 'bold',
-                          textDecoration: 'none',
-                          fontSize: '15px',
-                          textTransform: 'uppercase',
-                          letterSpacing: '1px'
-                        }}
-                      >
-                        Read Article <i className="iconoir-arrow-up-right" style={{ fontSize: '18px' }}></i>
-                      </Link>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Sidebar */}

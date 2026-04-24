@@ -61,7 +61,7 @@ const WorkDetails = () => {
                 </h1>
               </>
             ) : (
-              <p style={{ color: "var(--text-color)" }}>Loading...</p>
+              <div className="custom-spinner" style={{ width: '20px', height: '20px', borderWidth: '2px' }}></div>
             )}
           </div>
         </div>
@@ -175,8 +175,8 @@ const WorkDetails = () => {
             </div>
           </>
         ) : (
-          <div className="container" style={{ padding: "100px 0", textAlign: "center" }}>
-             <p style={{ color: "var(--text-color)" }}>Loading project details...</p>
+          <div className="container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '300px' }}>
+            <div className="custom-spinner"></div>
           </div>
         )}
       </div>

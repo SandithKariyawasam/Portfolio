@@ -144,7 +144,9 @@ const BlogDetails = () => {
                 }}
               >
                 {loading ? (
-                  <div style={{ textAlign: "center", padding: "100px 0", color: "var(--text-color)" }}>Loading...</div>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '100px 0' }}>
+                    <div className="custom-spinner"></div>
+                  </div>
                 ) : !blog ? (
                   <div style={{ textAlign: "center", padding: "100px 0", color: "var(--text-color)" }}>Blog not found.</div>
                 ) : (

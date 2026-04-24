@@ -1,8 +1,13 @@
 
 
-/* Hide default cursor on public site — custom cursor handles it */
-body, a, button, input, select, textarea, [role="button"] {
-  cursor: none !important;
+/* Dashboard mode: hide circle trail and restore default cursor */
+body.dashboard-mode .circle {
+  display: none !important;
+}
+body.dashboard-mode *,
+body.dashboard-mode *::before,
+body.dashboard-mode *::after {
+  cursor: auto !important;
 }
 
 /* # Margin */

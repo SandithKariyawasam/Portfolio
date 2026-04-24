@@ -6,6 +6,7 @@ import bg1 from "../assets/images/bg1.png";
 
 const Works = () => {
   const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   // 1. Fetch Data
   useEffect(() => {
@@ -16,6 +17,8 @@ const Works = () => {
         setProjects(data);
       } catch (err) {
         console.error("Error fetching projects:", err);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -38,8 +41,12 @@ const Works = () => {
 
         {/* Dynamic Grid */}
         <div className="row">
-          {projects.length === 0 ? (
-            <div></div>
+          {loading ? (
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '300px', width: '100%' }}>
+              <div className="custom-spinner"></div>
+            </div>
+          ) : projects.length === 0 ? (
+            <div style={{ textAlign: "center", color: "var(--text-color)", width: "100%", padding: "50px 0" }}>No projects found.</div>
           ) : (
             projects.map((project, index) => (
               <div className="col-md-4" key={project.id}>

@@ -43,6 +43,16 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Toggle dashboard-mode class on body to control circle cursor visibility
+  useEffect(() => {
+    const isDashboard = location.pathname.startsWith('/dashboard');
+    if (isDashboard) {
+      document.body.classList.add('dashboard-mode');
+    } else {
+      document.body.classList.remove('dashboard-mode');
+    }
+  }, [location.pathname]);
+
   // useEffect(() => {
   //   fetch("http://localhost:8070//api/data")
   //     .then((res) => res.json())

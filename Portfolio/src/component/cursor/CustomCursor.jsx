@@ -6,6 +6,19 @@ const CustomCursor = () => {
   const ringRef = useRef(null);
   const { theme } = useContext(ThemeContext);
 
+  // Hide the native cursor while this component is mounted (public site only)
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.id = 'custom-cursor-hide';
+    style.textContent = '*, *::before, *::after { cursor: none !important; }';
+    document.head.appendChild(style);
+
+    return () => {
+      const existing = document.getElementById('custom-cursor-hide');
+      if (existing) existing.remove();
+    };
+  }, []);
+
   useEffect(() => {
     const dot = dotRef.current;
     const ring = ringRef.current;
